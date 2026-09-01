@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAVASH LAB | Основне Меню</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+        <div class="logo-container">
+            <a href="index.html" class="logo">LAVASH <span>LAB</span></a>
+            <div class="status-badge">
+                <span class="status-dot"></span> ВІДЧИНЕНО
+            </div>
+        </div>
+        <nav>
+            <a href="index.html">МЕНЮ</a>
+            <a href="addons.html">ДОДАТКИ</a>
+            <a href="drinks.html" class="active">НАПОЇ ТА ДЕСЕРТИ</a>
+        </nav>
+        <a href="tel:+380730606063" class="btn-header-order">ЗАМОВИТИ ОНЛАЙН</a>
+    </header>
+<section class="hero">
+        <div class="hero-content">
+            <h1>LAVASH LAB:<br><span class="highlight-text">НОВИЙ ПОГЛЯД</span><br>НА СТРІТФУД</h1>
+            <p class="hero-subtitle">Соковита шаурма • Авторський гриль</p>
+            <a href="#shawarma" class="btn-hero">ДИВИТИСЯ МЕНЮ</a>
+        </div>
+    </section>
+
+    <div class="container" id="shawarma">
+        <h2 class="section-title">МЕНЮ (ШАУРМА)</h2>
+        <div class="grid">
+            <div class="spotlight-card">
+                <div class="card-header"><span class="item-title">Класична</span><span class="item-price">200 ГРН</span></div>
+                <p class="item-desc">Куряче філе, картопля фрі, корейська морквина, свіжа капуста, солоний огірок, фірмовий соус.</p>
+            </div>
+            <div class="spotlight-card">
+                <div class="card-header"><span class="item-title">Асорті <span class="badge badge-hit">ХИТ</span></span><span class="item-price">230 ГРН</span></div>
+                <p class="item-desc">Класичний склад + додаткова порція сиру та ніжні мариновані печериці.</p>
+            </div>
+            <div class="spotlight-card">
+                <div class="card-header"><span class="item-title">Гавайська</span><span class="item-price">220 ГРН</span></div>
+                <p class="item-desc">Соковита курка, солодкий ананас, подвійний сир, свіжа капуста та фірмовий соус.</p>
+            </div>
+            <div class="spotlight-card">
+                <div class="card-header"><span class="item-title">Сирна</span><span class="item-price">220 ГРН</span></div>
+                <p class="item-desc">Курка, 2 порції сиру, соус, картопля фрі.</p>
+            </div>
+            <div class="spotlight-card">
+                <div class="card-header"><span class="item-title">Fresh <span class="badge badge-new">new</span></span><span class="item-price">190 ГРН</span></div>
+                <p class="item-desc">Фалафель або курка, свіжі овочі, легкий соус.</p>
+            </div>
+            <div class="spotlight-card">
+                <div class="card-header"><span class="item-title">Fish <span class="badge badge-new">new</span></span><span class="item-price">300 ГРН</span></div>
+                <p class="item-desc">Лосось, авокадо, свіжий огірок, легкий фірмовий соус.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">ХОТ-ДОГ В ЛАВАШІ</h2>
+        <div class="grid">
+            <div class="spotlight-card">
+                <div class="card-header"><span class="item-title">Класичний</span><span class="item-price">150 ГРН</span></div>
+                <p class="item-desc">Сосиска, морквина, картопля фрі, помідор, огірки, фірмовий соус.</p>
+            </div>
+            <div class="spotlight-card">
+                <div class="card-header"><span class="item-title">Подвійний класичний</span><span class="item-price">175 ГРН</span></div>
+                <p class="item-desc">2 сосиски, морквина, картопля фрі, помідор, огірки, фірмовий соус.</p>
+            </div>
+            <div class="spotlight-card">
+                <div class="card-header"><span class="item-title">Гавайський</span><span class="item-price">175 ГРН</span></div>
+                <p class="item-desc">Подвійна сосиска, ананас, сир, картопля фрі, фірмовий соус.</p>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <a href="index.html" class="active-page">1</a>
+            <a href="addons.html">2</a>
+            <a href="drinks.html">3</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p class="footer-brand"><strong>LAVASH LAB</strong> — Новий погляд на стрітфуд</p>
+                <p class="footer-address">📍 Одеса, вул. В. Бувалкіна, 112</p>
+                <p class="footer-hours">🕐 8:00 – 22:00 (Щодня)</p>
+            </div>
+            
+            <div class="footer-contacts">
+                <a href="tel:+380730606063" class="btn-order">📞 Передзамовлення: +38 073 060 60 63</a>
+                
+                <a href="https://www.instagram.com/lavashlab_grill" target="_blank" class="footer-social-link">
+                    <img src="logo for instagram info.jpg" alt="Lavash Lab Instagram" class="insta-avatar">
+                    <span>INSTAGRAM: <strong>@lavashlab_grill</strong></span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.spotlight-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+            });
+        });
+
+        function smoothScrollTo(targetSelector, duration = 1000) {
+            const target = document.querySelector(targetSelector);
+            if (!target) return;
+
+            const headerOffset = 80;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            let startTime = null;
+
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const progress = Math.min(timeElapsed / duration, 1);
+                
+                const ease = progress < 0.5 
+                    ? 2 * progress * progress 
+                    : -1 + (4 - 2 * progress) * progress;
+
+                window.scrollTo(0, startPosition + distance * ease);
+
+                if (timeElapsed < duration) {
+                    requestAnimationFrame(animation);
+                }
+            }
+
+            requestAnimationFrame(animation);
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId !== '#') {
+                    smoothScrollTo(targetId, 1500);
+                }
+            });
+        });
+
+
+        // Плавный уход страницы при клике на внутренние ссылки
+  document.querySelectorAll('nav a, .pagination a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      
+      // Проверяем, что ссылка ведет на другую страницу, а не якорь (#)
+      if (href && !href.startsWith('#') && href !== window.location.pathname) {
+        e.preventDefault();
+        document.body.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        document.body.style.opacity = '0';
+        document.body.style.transform = 'translateY(-8px)';
+        
+        setTimeout(() => {
+          window.location.href = href;
+        }, 300);
+      }
+    });
+  });
+    </script>
+</body>
+</html>
