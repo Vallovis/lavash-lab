@@ -9,193 +9,183 @@
 <body>
 
 <header>
-        <div class="logo-container">
-            <a href="index.html" class="logo">LAVASH <span>LAB</span></a>
-            <div class="status-badge">
-                <span class="status-dot"></span> ВІДЧИНЕНО
-            </div>
+    <div class="logo-container">
+        <a href="index.html" class="logo">LAVASH <span>LAB</span></a>
+        <div class="status-badge">
+            <span class="status-dot"></span> ВІДЧИНЕНО
         </div>
-        <nav>
-            <a href="index.html">МЕНЮ</a>
-            <a href="addons.html">ДОДАТКИ</a>
-            <a href="drinks.html" class="active">НАПОЇ ТА ДЕСЕРТИ</a>
-        </nav>
-        <a href="tel:+380730606063" class="btn-header-order">ЗАМОВИТИ ОНЛАЙН</a>
-    </header>
+    </div>
+    <nav>
+        <a href="index.html">МЕНЮ</a>
+        <a href="addons.html" class="active">ДОДАТКИ</a>
+        <a href="drinks.html">НАПОЇ ТА ДЕСЕРТИ</a>
+    </nav>
+    <button class="btn-header-order">ЗАМОВИТИ ОНЛАЙН</button>
+</header>
 
 <section class="hero">
-        <div class="hero-content">
-            <h1>LAVASH LAB:<br><span class="highlight-text">НОВИЙ ПОГЛЯД</span><br>НА СТРІТФУД</h1>
-            <p class="hero-subtitle">Соковита шаурма • Авторський гриль</p>
-            <a href="#addons-list" class="btn-hero">ДИВИТИСЯ МЕНЮ</a>
+    <div class="hero-content">
+        <h1>LAVASH LAB:<br><span class="highlight-text">НОВИЙ ПОГЛЯД</span><br>НА СТРІТФУД</h1>
+        <p class="hero-subtitle">Соковита шаурма • Авторський гриль</p>
+        <a href="#addons-list" class="btn-hero">ДИВИТИСЯ МЕНЮ</a>
+    </div>
+</section>
+
+<div class="container" id="addons-list">
+    <h2 class="section-title">ПОВНИЙ СПИСОК ДОДАТКІВ (ДОПИ)</h2>
+
+    <div class="grid">
+        <div class="spotlight-card">
+            <div class="card-header">
+                <span class="item-title">М'ясо</span>
+                <span class="item-price">+45 ГРН</span>
+            </div>
+            <button class="btn-add-to-cart" data-name="Доп: М'ясо" data-price="45">+ Додати</button>
         </div>
-    </section>
-
-    <div class="container" id="addons-list">
-        <h2 class="section-title">ПОВНИЙ СПИСОК ДОДАТКІВ (ДОПИ)</h2>
-
-        <div class="grid">
-            <div class="spotlight-card">
-                <div class="card-header">
-                    <span class="item-title">М'ясо</span>
-                    <span class="item-price">+45 ГРН</span>
-                </div>
+        <div class="spotlight-card">
+            <div class="card-header">
+                <span class="item-title">Сосиска</span>
+                <span class="item-price">+30 ГРН</span>
             </div>
-            <div class="spotlight-card">
-                <div class="card-header">
-                    <span class="item-title">Сосиска</span>
-                    <span class="item-price">+30 ГРН</span>
-                </div>
-            </div>
-            <div class="spotlight-card">
-                <div class="card-header">
-                    <span class="item-title">Сир</span>
-                    <span class="item-price">+30 ГРН</span>
-                </div>
-            </div>
-            <div class="spotlight-card">
-                <div class="card-header">
-                    <span class="item-title">Ананас</span>
-                    <span class="item-price">+30 ГРН</span>
-                </div>
-            </div>
-            <div class="spotlight-card">
-                <div class="card-header">
-                    <span class="item-title">Маслини, оливки</span>
-                    <span class="item-price">+30 ГРН</span>
-                </div>
-            </div>
-            <div class="spotlight-card">
-                <div class="card-header">
-                    <span class="item-title">Картопля фрі</span>
-                    <span class="item-price">+30 ГРН</span>
-                </div>
-            </div>
-            <div class="spotlight-card">
-                <div class="card-header">
-                    <span class="item-title">Грибочки</span>
-                    <span class="item-price">+20 ГРН</span>
-                </div>
-            </div>
-            <div class="spotlight-card">
-                <div class="card-header">
-                    <span class="item-title">Помідор</span>
-                    <span class="item-price">+20 ГРН</span>
-                </div>
-            </div>
-            <div class="spotlight-card">
-                <div class="card-header">
-                    <span class="item-title">Корейська морква</span>
-                    <span class="item-price">+20 ГРН</span>
-                </div>
-            </div>
-            <div class="spotlight-card">
-                <div class="card-header">
-                    <span class="item-title">Огірок маринований</span>
-                    <span class="item-price">+15 ГРН</span>
-                </div>
-            </div>
-            <div class="spotlight-card">
-                <div class="card-header">
-                    <span class="item-title">Цибуля маринована</span>
-                    <span class="item-price">+10 ГРН</span>
-                </div>
-            </div>
+            <button class="btn-add-to-cart" data-name="Доп: Сосиска" data-price="30">+ Додати</button>
         </div>
-
-        <div class="pagination">
-            <a href="index.html">1</a>
-            <a href="addons.html" class="active-page">2</a>
-            <a href="drinks.html">3</a>
+        <div class="spotlight-card">
+            <div class="card-header">
+                <span class="item-title">Сир</span>
+                <span class="item-price">+30 ГРН</span>
+            </div>
+            <button class="btn-add-to-cart" data-name="Доп: Сир" data-price="30">+ Додати</button>
+        </div>
+        <div class="spotlight-card">
+            <div class="card-header">
+                <span class="item-title">Ананас</span>
+                <span class="item-price">+30 ГРН</span>
+            </div>
+            <button class="btn-add-to-cart" data-name="Доп: Ананас" data-price="30">+ Додати</button>
+        </div>
+        <div class="spotlight-card">
+            <div class="card-header">
+                <span class="item-title">Маслини, оливки</span>
+                <span class="item-price">+30 ГРН</span>
+            </div>
+            <button class="btn-add-to-cart" data-name="Доп: Маслини, оливки" data-price="30">+ Додати</button>
+        </div>
+        <div class="spotlight-card">
+            <div class="card-header">
+                <span class="item-title">Картопля фрі</span>
+                <span class="item-price">+30 ГРН</span>
+            </div>
+            <button class="btn-add-to-cart" data-name="Доп: Картопля фрі" data-price="30">+ Додати</button>
+        </div>
+        <div class="spotlight-card">
+            <div class="card-header">
+                <span class="item-title">Грибочки</span>
+                <span class="item-price">+20 ГРН</span>
+            </div>
+            <button class="btn-add-to-cart" data-name="Доп: Грибочки" data-price="20">+ Додати</button>
+        </div>
+        <div class="spotlight-card">
+            <div class="card-header">
+                <span class="item-title">Помідор</span>
+                <span class="item-price">+20 ГРН</span>
+            </div>
+            <button class="btn-add-to-cart" data-name="Доп: Помідор" data-price="20">+ Додати</button>
+        </div>
+        <div class="spotlight-card">
+            <div class="card-header">
+                <span class="item-title">Корейська морква</span>
+                <span class="item-price">+20 ГРН</span>
+            </div>
+            <button class="btn-add-to-cart" data-name="Доп: Корейська морква" data-price="20">+ Додати</button>
+        </div>
+        <div class="spotlight-card">
+            <div class="card-header">
+                <span class="item-title">Огірок маринований</span>
+                <span class="item-price">+15 ГРН</span>
+            </div>
+            <button class="btn-add-to-cart" data-name="Доп: Огірок маринований" data-price="15">+ Додати</button>
+        </div>
+        <div class="spotlight-card">
+            <div class="card-header">
+                <span class="item-title">Цибуля маринована</span>
+                <span class="item-price">+10 ГРН</span>
+            </div>
+            <button class="btn-add-to-cart" data-name="Доп: Цибуля маринована" data-price="10">+ Додати</button>
         </div>
     </div>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-info">
-                <p class="footer-brand"><strong>LAVASH LAB</strong> — Новий погляд на стрітфуд</p>
-                <p class="footer-address">📍 Одеса, вул. В. Бувалкіна, 112</p>
-                <p class="footer-hours">🕐 8:00 – 22:00 (Щодня)</p>
-            </div>
+    <div class="pagination">
+        <a href="index.html">1</a>
+        <a href="addons.html" class="active-page">2</a>
+        <a href="drinks.html">3</a>
+    </div>
+</div>
 
-            <div class="footer-contacts">
-                <a href="tel:+380730606063" class="btn-order">📞 Передзамовлення: +38 073 060 60 63</a>
-
-                <a href="https://www.instagram.com/lavashlab_grill" target="_blank" class="footer-social-link">
-                    <img src="logo for instagram info.jpg" alt="Lavash Lab Instagram" class="insta-avatar">
-                    <span>INSTAGRAM: <strong>@lavashlab_grill</strong></span>
-                </a>
-            </div>
+<footer>
+    <div class="footer-container">
+        <div class="footer-info">
+            <p class="footer-brand"><strong>LAVASH LAB</strong> — Новий погляд на стрітфуд</p>
+            <p class="footer-address">📍 Одеса, вул. В. Бувалкіна, 112</p>
+            <p class="footer-hours">🕐 8:00 – 22:00 (Щодня)</p>
         </div>
-    </footer>
 
-    <script>
-        document.querySelectorAll('.spotlight-card').forEach(card => {
-            card.addEventListener('mousemove', e => {
-                const rect = card.getBoundingClientRect();
-                card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
-                card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
-            });
-        });
+        <div class="footer-contacts">
+            <a href="tel:+380730606063" class="btn-order">📞 Передзамовлення: +38 073 060 60 63</a>
 
-        function smoothScrollTo(targetSelector, duration = 1000) {
-            const target = document.querySelector(targetSelector);
-            if (!target) return;
+            <a href="https://www.instagram.com/lavashlab_grill" target="_blank" class="footer-social-link">
+                <img src="logo for instagram info.jpg" alt="Lavash Lab Instagram" class="insta-avatar">
+                <span>INSTAGRAM: <strong>@lavashlab_grill</strong></span>
+            </a>
+        </div>
+    </div>
+</footer>
 
-            const headerOffset = 80;
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
-            const startPosition = window.pageYOffset;
-            const distance = targetPosition - startPosition;
-            let startTime = null;
+<div id="bottom-cart-bar" class="bottom-cart-bar">
+  <div class="cart-bar-content">
+    <div class="cart-icon-wrapper" onclick="openModal()">
+      <div class="cart-icon-container">
+        <svg class="cart-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span id="cart-badge" class="cart-badge">0</span>
+      </div>
+      <span class="cart-label">Кошик</span>
+    </div>
 
-            function animation(currentTime) {
-                if (startTime === null) startTime = currentTime;
-                const timeElapsed = currentTime - startTime;
-                const progress = Math.min(timeElapsed / duration, 1);
+    <button class="btn-cart-next" onclick="openModal()">Далі</button>
+  </div>
+</div>
 
-                const ease = progress < 0.5 
-                    ? 2 * progress * progress 
-                    : -1 + (4 - 2 * progress) * progress;
+<div id="order-modal" class="modal-overlay">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <h3>ОФОРМЛЕННЯ ЗАМОВЛЕННЯ</h3>
+    
+<form id="order-form">
+  <div class="form-group">
+    <label for="client-name">Ваше ім'я *</label>
+    <input type="text" id="client-name" required placeholder="Олексій">
+  </div>
 
-                window.scrollTo(0, startPosition + distance * ease);
+  <div class="form-group">
+    <label for="client-phone">Номер телефону *</label>
+    <input type="tel" id="client-phone" required placeholder="+380730606063">
+  </div>
 
-                if (timeElapsed < duration) {
-                    requestAnimationFrame(animation);
-                }
-            }
+<div class="form-group">
+  <label>Ваше замовлення</label>
+  <div id="cart-items-container">
+    <ul id="cart-items-list"></ul>
+  </div>
+  <div id="cart-total-price">Сума: 0 ГРН</div>
+</div>
 
-            requestAnimationFrame(animation);
-        }
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId && targetId !== '#') {
-                    smoothScrollTo(targetId, 1500);
-                }
-            });
-        });
-
-
-        // Плавный уход страницы при клике на внутренние ссылки
-  document.querySelectorAll('nav a, .pagination a').forEach(link => {
-    link.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      
-      // Проверяем, что ссылка ведет на другую страницу, а не якорь (#)
-      if (href && !href.startsWith('#') && href !== window.location.pathname) {
-        e.preventDefault();
-        document.body.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-        document.body.style.opacity = '0';
-        document.body.style.transform = 'translateY(-8px)';
-        
-        setTimeout(() => {
-          window.location.href = href;
-        }, 300);
-      }
-    });
-  });
-    </script>
+  <button type="submit" id="btn-submit" class="btn-hero">ВІДПРАВИТИ ЗАМОВЛЕННЯ</button>
+</form>
+  </div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
