@@ -1,0 +1,1975 @@
+<!doctype html>
+<html class="dark" lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Lavash Lab | Авторська шаурма в Одесі</title>
+
+    <!-- Шрифти та іконки -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-high": "#2a2a2c",
+              "primary-fixed": "#ffddb9",
+              "primary-container": "#f39c12",
+              "tertiary-fixed": "#6ffbbe",
+              "error-container": "#93000a",
+              "inverse-primary": "#865300",
+              "on-background": "#e5e1e4",
+              "surface-tint": "#ffb961",
+              "surface-container-low": "#1b1b1d",
+              outline: "#a18d7a",
+              "on-primary": "#472a00",
+              "on-secondary-fixed": "#351000",
+              tertiary: "#53e3a7",
+              "inverse-surface": "#e5e1e4",
+              "primary-fixed-dim": "#ffb961",
+              "on-secondary-fixed-variant": "#7c2e00",
+              "on-primary-fixed-variant": "#663e00",
+              "surface-container-highest": "#353437",
+              primary: "#ffbe70",
+              "surface-variant": "#353437",
+              surface: "#131315",
+              "tertiary-container": "#2dc68d",
+              "surface-dim": "#131315",
+              "secondary-fixed-dim": "#ffb595",
+              "on-primary-container": "#603a00",
+              "surface-container": "#1f1f21",
+              "outline-variant": "#534434",
+              "inverse-on-surface": "#303032",
+              background: "#131315",
+              "on-tertiary-fixed-variant": "#005236",
+              "on-surface-variant": "#d8c3ad",
+              "on-secondary-container": "#4c1a00",
+              "secondary-fixed": "#ffdbcd",
+              "on-tertiary-container": "#004d33",
+              "on-error-container": "#ffdad6",
+              "on-error": "#690005",
+              "on-tertiary-fixed": "#002113",
+              "on-surface": "#e5e1e4",
+              "secondary-container": "#ee671c",
+              error: "#ffb4ab",
+              "on-primary-fixed": "#2b1700",
+              "surface-container-lowest": "#0e0e10",
+              "on-secondary": "#571e00",
+              "on-tertiary": "#003824",
+              "surface-bright": "#39393b",
+              "tertiary-fixed-dim": "#4edea3",
+              secondary: "#ffb595",
+            },
+            spacing: {
+              "space-2xs": "0.25rem",
+              "gutter-tablet": "1.5rem",
+              "gutter-mobile": "1rem",
+              "gutter-desktop": "2rem",
+              "space-xs": "0.5rem",
+              "space-md": "1rem",
+              "container-max": "1280px",
+              "space-3xl": "4rem",
+              "space-2xl": "3rem",
+              "space-sm": "0.75rem",
+              "space-xl": "2rem",
+              "space-lg": "1.5rem",
+            },
+            fontFamily: {
+              "body-sm": ["Plus Jakarta Sans"],
+              "headline-md": ["Outfit"],
+              "display-hero": ["Outfit"],
+              "price-currency": ["Plus Jakarta Sans"],
+              "headline-xl": ["Outfit"],
+              "label-badge": ["Outfit"],
+              "headline-xl-mobile": ["Outfit"],
+              "display-hero-mobile": ["Outfit"],
+              "headline-sm": ["Outfit"],
+              "price-num": ["Outfit"],
+              "body-md": ["Plus Jakarta Sans"],
+              "body-lg": ["Plus Jakarta Sans"],
+              "headline-lg": ["Outfit"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+          scroll-behavior: smooth;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"
+  >
+    <!-- ГЕОМЕТРИЧНИЙ ТА СВІТЛОВИЙ ФОН ШАПКИ -->
+    <div class="relative overflow-hidden bg-background pt-20 pb-12 lg:pb-20">
+      <!-- Неонові градієнтні плями на фоні -->
+      <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/15 blur-[120px] rounded-full pointer-events-none"></div>
+      <div class="absolute -top-20 -right-20 w-[400px] h-[400px] bg-secondary-container/20 blur-[100px] rounded-full pointer-events-none"></div>
+
+      <!-- ФІКСОВАНИЙ СКЛЯНИЙ НАВІГАТОР (HEADER) -->
+      <header class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-white/10 shadow-xl transition-all">
+        <div class="max-w-[1280px] mx-auto h-20 px-4 md:px-8 flex items-center justify-between gap-4">
+          
+          <!-- Логотип та статус -->
+          <div class="flex items-center gap-4">
+            <a href="#" class="flex items-center gap-2 group">
+              <img
+                src="logo.jpg" 
+                alt="Lavash Lab Logo" 
+                class="h-11 w-auto transition-transform group-hover:scale-105" 
+              />
+            </a>
+
+            <div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high/80 border border-white/5 text-xs">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+              </span>
+              <span class="text-tertiary font-medium">Відчинено (8:00 - 22:00)</span>
+            </div>
+          </div>
+
+          <!-- Меню навігації -->
+          <nav class="hidden md:flex items-center gap-1 p-1 bg-surface-container-low/90 rounded-2xl border border-white/5">
+            <a href="#menu-catalog" class="px-5 py-2 rounded-xl text-sm font-semibold bg-primary-container text-on-primary-container transition-all hover:shadow-lg hover:shadow-primary/20">
+              🌯 Меню
+            </a>
+            <a href="reviews.html" class="px-5 py-2 rounded-xl text-sm font-semibold text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-all">
+              Відгуки
+            </a>
+          </nav>
+
+          <!-- Контакти та Кошик -->
+          <div class="flex items-center gap-3">
+            <a href="tel:0730606063" class="hidden lg:flex items-center gap-2 px-3.5 py-2 rounded-xl bg-surface-container-high/60 border border-white/5 text-xs font-semibold text-on-surface hover:border-primary/40 transition-all">
+              <span class="material-symbols-outlined text-primary text-[18px]">call</span>
+              <span>073 060 60 63</span>
+            </a>
+
+            <!-- КНОПКА ЗАМОВЛЕННЯ -->
+            <button 
+              onclick="scrollToBuilder()" 
+              class="relative flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-primary-container to-secondary-container text-on-primary-container font-bold text-sm shadow-lg shadow-primary-container/20 hover:scale-105 transition-all active:scale-95 cursor-pointer"
+            >
+              <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+              <span class="hidden sm:inline">Замовлення</span>
+              <span id="header-cart-badge" class="flex h-5 min-w-[20px] items-center justify-center rounded-full bg-surface text-primary text-[11px] font-bold px-1">
+                0
+              </span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- ОСНОВНА ГЕРОЙ-ШАПКА (HERO BANNER) -->
+      <section class="max-w-[1280px] mx-auto px-4 md:px-8 pt-8 lg:pt-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Текстовий блок -->
+          <div class="lg:col-span-7 flex flex-col gap-6 text-left z-10">
+            
+            <!-- Бейдж хіт -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-primary w-fit text-xs font-bold uppercase tracking-wider">
+              <span class="animate-bounce">🔥</span>
+              <span>Найкраща авторська шаурма в Одесі</span>
+            </div>
+
+            <!-- Головний заголовок -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-on-surface leading-[1.1] tracking-tight">
+              Соковита шаурма, <br class="hidden sm:inline" />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-container to-secondary">
+                загорнута в хрусткий лаваш
+              </span>
+            </h1>
+
+            <!-- Опис -->
+            <p class="text-base sm:text-lg text-on-surface-variant max-w-xl font-normal leading-relaxed">
+              Крафтові соуси, фірмові рецепти та 100% свіжі інгредієнти. Замовляйте самовивіз або обирайте з хітів нашого меню.
+            </p>
+
+            <!-- Переваги в іконках -->
+            <div class="grid grid-cols-3 gap-3 py-2 max-w-md">
+              <div class="flex items-center gap-2 p-2.5 rounded-xl bg-surface-container/60 border border-white/5">
+                <span class="text-xl">⚡</span>
+                <div class="text-xs">
+                  <span class="block font-bold text-on-surface">7 хвилин</span>
+                  <span class="text-on-surface-variant text-[10px]">Швидка видача</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 p-2.5 rounded-xl bg-surface-container/60 border border-white/5">
+                <span class="text-xl">🌯</span>
+                <div class="text-xs">
+                  <span class="block font-bold text-on-surface">Авторські</span>
+                  <span class="text-on-surface-variant text-[10px]">Рецептури</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 p-2.5 rounded-xl bg-surface-container/60 border border-white/5">
+                <span class="text-xl">⭐</span>
+                <div class="text-xs">
+                  <span class="block font-bold text-on-surface">4.9 / 5.0</span>
+                  <span class="text-on-surface-variant text-[10px]">Відгуки гостей</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Кнопки дій -->
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <a 
+                href="#menu-catalog" 
+                class="px-8 py-4 rounded-2xl bg-primary-container hover:bg-secondary-container text-on-primary-container font-extrabold text-base transition-all shadow-xl shadow-primary-container/20 hover:scale-105 active:scale-95 flex items-center gap-2"
+              >
+                <span>Обрати страви</span>
+                <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+              </a>
+              <a 
+                href="#builder-section" 
+                class="px-6 py-4 rounded-2xl bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-bold text-base border border-white/10 transition-all hover:border-primary/40"
+              >
+                🧩 Сконструювати
+              </a>
+            </div>
+          </div>
+
+          <!-- Візуальний блок -->
+          <div class="lg:col-span-5 relative flex justify-center items-center">
+            
+            <!-- Фонове світіння -->
+            <div class="absolute w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] bg-gradient-to-tr from-primary/30 to-secondary-container/40 rounded-full blur-3xl -z-0"></div>
+
+            <!-- Головне фото -->
+            <div class="relative z-10 w-full max-w-[420px] aspect-square rounded-3xl overflow-hidden border border-white/10 bg-surface-container shadow-2xl group">
+              <img 
+                src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1000&q=80" 
+                alt="Апетитна шаурма" 
+                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
+              
+              <div class="absolute bottom-4 left-4 right-4 p-3 rounded-2xl bg-surface/80 backdrop-blur-md border border-white/10 flex items-center justify-between">
+                <div>
+                  <span class="text-xs text-primary font-bold uppercase tracking-wider block">Хіт продажів</span>
+                  <span class="text-sm font-bold text-on-surface">Шаурма Асорті</span>
+                </div>
+                <span class="px-3 py-1.5 rounded-xl bg-primary-container text-on-primary-container font-black text-sm">
+                  230 ₴
+                </span>
+              </div>
+            </div>
+
+            <!-- Плаваюча картка: Самовивіз -->
+            <div class="absolute -bottom-6 -right-2 sm:bottom-4 sm:-right-6 z-20 p-3.5 rounded-2xl bg-surface-container/95 border border-tertiary/30 backdrop-blur-md shadow-xl flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-tertiary/20 flex items-center justify-center text-xl text-tertiary">
+                🛍️
+              </div>
+              <div>
+                <span class="block text-xs font-bold text-on-surface">Швидкий самовивіз</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section> 
+    </div>
+
+    <!-- ОСНОВНИЙ КОНТЕНТ -->
+    <main class="w-full bg-background">
+      <!-- МЕНЮ КАТАЛОГ -->
+      <section class="w-full py-space-xl bg-background" id="menu-catalog">
+        <div
+          class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop"
+        >
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl"
+          >
+            <div>
+              <span
+                class="font-label-badge text-label-badge text-primary uppercase tracking-widest"
+                >Гастрономічна мапа</span
+              >
+              <h2
+                class="font-headline-xl text-headline-xl text-on-surface mt-1"
+              >
+                Повний каталог меню LAVASHLAB
+              </h2>
+            </div>
+          </div>
+
+          <!-- Фільтри категорій -->
+          <div
+            class="flex items-center gap-space-xs overflow-x-auto pb-space-sm mb-space-xl no-scrollbar"
+            id="menu-filter-tabs"
+          >
+            <button
+              class="cat-btn px-space-md py-space-xs rounded-xl font-headline-sm whitespace-nowrap transition-all bg-primary-container text-on-primary-container font-bold"
+              data-cat="all"
+              onclick="filterMenu('all')"
+            >
+              Всі страви
+            </button>
+            <button
+              class="cat-btn px-space-md py-space-xs rounded-xl font-headline-sm whitespace-nowrap transition-all bg-surface-container text-on-surface-variant hover:text-on-surface"
+              data-cat="shawarma"
+              onclick="filterMenu('shawarma')"
+            >
+              Шаурма
+            </button>
+            <button
+              class="cat-btn px-space-md py-space-xs rounded-xl font-headline-sm whitespace-nowrap transition-all bg-surface-container text-on-surface-variant hover:text-on-surface"
+              data-cat="hotdogs"
+              onclick="filterMenu('hotdogs')"
+            >
+              Хот-доги
+            </button>
+            <button
+              class="cat-btn px-space-md py-space-xs rounded-xl font-headline-sm whitespace-nowrap transition-all bg-surface-container text-on-surface-variant hover:text-on-surface"
+              data-cat="cheese-desert"
+              onclick="filterMenu('cheese-desert')"
+            >
+              Cheese &amp; Desert Lab
+            </button>
+            <button
+              class="cat-btn px-space-md py-space-xs rounded-xl font-headline-sm whitespace-nowrap transition-all bg-surface-container text-on-surface-variant hover:text-on-surface"
+              data-cat="fry-box"
+              onclick="filterMenu('fry-box')"
+            >
+              Fry Box &amp; Соуси
+            </button>
+            <button
+              class="cat-btn px-space-md py-space-xs rounded-xl font-headline-sm whitespace-nowrap transition-all bg-surface-container text-on-surface-variant hover:text-on-surface"
+              data-cat="dopi"
+              onclick="filterMenu('dopi')"
+            >
+              Допи (Добавки)
+            </button>
+            <button
+              class="cat-btn px-space-md py-space-xs rounded-xl font-headline-sm whitespace-nowrap transition-all bg-surface-container text-on-surface-variant hover:text-on-surface"
+              data-cat="drinks"
+              onclick="filterMenu('drinks')"
+            >
+              Напої, Кава &amp; Коктейлі
+            </button>
+          </div>
+
+          <!-- 1. ШАУРМА В ЛАВАШІ -->
+          <div
+            class="menu-section mb-space-2xl scroll-mt-28"
+            data-section="shawarma"
+          >
+            <h3
+              class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-2 mb-space-lg"
+            >
+              <span class="material-symbols-outlined text-primary text-[28px]"
+                >flatware</span
+              >
+              <span>1. Авторська Шаурма</span>
+            </h3>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md"
+            >
+              <div
+                class="p-space-md rounded-2xl bg-surface-container border border-white/5 flex flex-col justify-between hover:border-primary/30 transition-all"
+              >
+                <div>
+                  <div class="flex items-start justify-between gap-2 mb-1">
+                    <h4
+                      class="font-headline-sm text-on-surface font-bold text-lg"
+                    >
+                      Шаурма Класична
+                    </h4>
+                    <span
+                      class="text-primary font-bold text-lg font-price-num whitespace-nowrap"
+                      >200 ГРН</span
+                    >
+                  </div>
+                  <p class="text-xs text-on-surface-variant mb-4">
+                    Соковита курка, картопля фрі, корейська морквина, свіжа
+                    капуста, солоний огірок, фірмовий соус
+                  </p>
+                </div>
+                <button
+                  onclick="openDopiModal('Шаурма Класична', 200)"
+                  class="w-full py-2 rounded-xl bg-primary-container text-on-primary-container font-bold text-xs hover:bg-secondary-container transition-all active:scale-95"
+                >
+                  + Додати до замовлення
+                </button>
+              </div>
+
+              <div
+                class="p-space-md rounded-2xl bg-surface-container border border-primary/40 flex flex-col justify-between hover:border-primary transition-all shadow-lg shadow-primary/5 relative overflow-hidden"
+              >
+                <span
+                  class="absolute top-2 right-2 bg-primary-container text-on-primary-container text-[10px] font-bold px-2 py-0.5 rounded-full uppercase"
+                  >ХИТ</span
+                >
+                <div>
+                  <div
+                    class="flex items-start justify-between gap-2 mb-1 pr-12"
+                  >
+                    <h4
+                      class="font-headline-sm text-on-surface font-bold text-lg"
+                    >
+                      Шаурма Асорті (ХИТ)
+                    </h4>
+                    <span
+                      class="text-primary font-bold text-lg font-price-num whitespace-nowrap"
+                      >230 ГРН</span
+                    >
+                  </div>
+                  <p class="text-xs text-on-surface-variant mb-4">
+                    Класична + сир та грибочки
+                  </p>
+                </div>
+                <button
+                  onclick="openDopiModal('Шаурма Асорті (ХИТ)', 230)"
+                  class="w-full py-2 rounded-xl bg-primary-container text-on-primary-container font-bold text-xs hover:bg-secondary-container transition-all active:scale-95"
+                >
+                  + Додати до замовлення
+                </button>
+              </div>
+
+              <div
+                class="p-space-md rounded-2xl bg-surface-container border border-white/5 flex flex-col justify-between hover:border-primary/30 transition-all"
+              >
+                <div>
+                  <div class="flex items-start justify-between gap-2 mb-1">
+                    <h4
+                      class="font-headline-sm text-on-surface font-bold text-lg"
+                    >
+                      Шаурма Гавайська
+                    </h4>
+                    <span
+                      class="text-primary font-bold text-lg font-price-num whitespace-nowrap"
+                      >220 ГРН</span
+                    >
+                  </div>
+                  <p class="text-xs text-on-surface-variant mb-4">
+                    Курка, ананас, сир, капуста, фірмовий соус, картопля фрі
+                  </p>
+                </div>
+                <button
+                  onclick="openDopiModal('Шаурма Гавайська', 220)"
+                  class="w-full py-2 rounded-xl bg-primary-container text-on-primary-container font-bold text-xs hover:bg-secondary-container transition-all active:scale-95"
+                >
+                  + Додати до замовлення
+                </button>
+              </div>
+
+              <div
+                class="p-space-md rounded-2xl bg-surface-container border border-white/5 flex flex-col justify-between hover:border-primary/30 transition-all"
+              >
+                <div>
+                  <div class="flex items-start justify-between gap-2 mb-1">
+                    <h4
+                      class="font-headline-sm text-on-surface font-bold text-lg"
+                    >
+                      Шаурма Сирна
+                    </h4>
+                    <span
+                      class="text-primary font-bold text-lg font-price-num whitespace-nowrap"
+                      >220 ГРН</span
+                    >
+                  </div>
+                  <p class="text-xs text-on-surface-variant mb-4">
+                    Курка, 2 порції сиру, соус, картопля фрі
+                  </p>
+                </div>
+                <button
+                  onclick="openDopiModal('Шаурма Сирна', 220)"
+                  class="w-full py-2 rounded-xl bg-primary-container text-on-primary-container font-bold text-xs hover:bg-secondary-container transition-all active:scale-95"
+                >
+                  + Додати до замовлення
+                </button>
+              </div>
+
+              <div
+                class="p-space-md rounded-2xl bg-surface-container border border-white/5 flex flex-col justify-between hover:border-primary/30 transition-all"
+              >
+                <div>
+                  <div class="flex items-start justify-between gap-2 mb-1">
+                    <h4
+                      class="font-headline-sm text-on-surface font-bold text-lg"
+                    >
+                      Шаурма Fresh
+                      <span class="text-tertiary text-xs">new</span>
+                    </h4>
+                    <span
+                      class="text-primary font-bold text-lg font-price-num whitespace-nowrap"
+                      >190 ГРН</span
+                    >
+                  </div>
+                  <p class="text-xs text-on-surface-variant mb-4">
+                    Фалафель або курка, свіжі овочі, легкий соус
+                  </p>
+                </div>
+                <button
+                  onclick="openDopiModal('Шаурма Fresh', 190)"
+                  class="w-full py-2 rounded-xl bg-primary-container text-on-primary-container font-bold text-xs hover:bg-secondary-container transition-all active:scale-95"
+                >
+                  + Додати до замовлення
+                </button>
+              </div>
+
+              <div
+                class="p-space-md rounded-2xl bg-surface-container border border-white/5 flex flex-col justify-between hover:border-primary/30 transition-all"
+              >
+                <div>
+                  <div class="flex items-start justify-between gap-2 mb-1">
+                    <h4
+                      class="font-headline-sm text-on-surface font-bold text-lg"
+                    >
+                      Шаурма Fish <span class="text-tertiary text-xs">new</span>
+                    </h4>
+                    <span
+                      class="text-primary font-bold text-lg font-price-num whitespace-nowrap"
+                      >300 ГРН</span
+                    >
+                  </div>
+                  <p class="text-xs text-on-surface-variant mb-4">
+                    Лосось, авокадо, свіжий огірок, легкий фірмовий соус
+                  </p>
+                </div>
+                <button
+                  onclick="openDopiModal('Шаурма Fish', 300)"
+                  class="w-full py-2 rounded-xl bg-primary-container text-on-primary-container font-bold text-xs hover:bg-secondary-container transition-all active:scale-95"
+                >
+                  + Додати до замовлення
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. ХОТ-ДОГИ -->
+          <div
+            class="menu-section mb-space-2xl scroll-mt-28"
+            data-section="hotdogs"
+          >
+            <h3
+              class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-2 mb-space-lg"
+            >
+              <span class="material-symbols-outlined text-primary text-[28px]"
+                >fastfood</span
+              >
+              <span>2. Хот-доги</span>
+            </h3>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md"
+            >
+              <div
+                class="p-space-md rounded-2xl bg-surface-container border border-white/5 flex flex-col justify-between hover:border-primary/30 transition-all"
+              >
+                <div>
+                  <div class="flex items-start justify-between gap-2 mb-1">
+                    <h4
+                      class="font-headline-sm text-on-surface font-bold text-lg"
+                    >
+                      Хот-дог в лаваші Класичний
+                    </h4>
+                    <span
+                      class="text-primary font-bold text-lg font-price-num whitespace-nowrap"
+                      >150 ГРН</span
+                    >
+                  </div>
+                  <p class="text-xs text-on-surface-variant mb-4">
+                    Сосиска, морквина, картопля фрі, помідор, огірок, фірмовий
+                    соус
+                  </p>
+                </div>
+                <button
+                  onclick="addToCart('Хот-дог в лаваші Класичний', 150)"
+                  class="w-full py-2 rounded-xl bg-primary-container text-on-primary-container font-bold text-xs hover:bg-secondary-container transition-all active:scale-95"
+                >
+                  + Додати до замовлення
+                </button>
+              </div>
+
+              <div
+                class="p-space-md rounded-2xl bg-surface-container border border-white/5 flex flex-col justify-between hover:border-primary/30 transition-all"
+              >
+                <div>
+                  <div class="flex items-start justify-between gap-2 mb-1">
+                    <h4
+                      class="font-headline-sm text-on-surface font-bold text-lg"
+                    >
+                      Хот-дог в лаваші Подвійний
+                    </h4>
+                    <span
+                      class="text-primary font-bold text-lg font-price-num whitespace-nowrap"
+                      >175 ГРН</span
+                    >
+                  </div>
+                  <p class="text-xs text-on-surface-variant mb-4">
+                    2 сосиски, морквина, картопля фрі, помідор, огірок, фірмовий
+                    соус
+                  </p>
+                </div>
+                <button
+                  onclick="addToCart('Хот-дог в лаваші Подвійний', 175)"
+                  class="w-full py-2 rounded-xl bg-primary-container text-on-primary-container font-bold text-xs hover:bg-secondary-container transition-all active:scale-95"
+                >
+                  + Додати до замовлення
+                </button>
+              </div>
+
+              <div
+                class="p-space-md rounded-2xl bg-surface-container border border-white/5 flex flex-col justify-between hover:border-primary/30 transition-all"
+              >
+                <div>
+                  <div class="flex items-start justify-between gap-2 mb-1">
+                    <h4
+                      class="font-headline-sm text-on-surface font-bold text-lg"
+                    >
+                      Французький хот-дог (Молочний)
+                    </h4>
+                    <span
+                      class="text-primary font-bold text-lg font-price-num whitespace-nowrap"
+                      >80 ГРН</span
+                    >
+                  </div>
+                  <p class="text-xs text-on-surface-variant mb-4">
+                    Хрустка булочка, сосиска молочна, соуси
+                  </p>
+                </div>
+                <button
+                  onclick="addToCart('Французький хот-дог (Молочний)', 80)"
+                  class="w-full py-2 rounded-xl bg-primary-container text-on-primary-container font-bold text-xs hover:bg-secondary-container transition-all active:scale-95"
+                >
+                  + Додати до замовлення
+                </button>
+              </div>
+
+              <div
+                class="p-space-md rounded-2xl bg-surface-container border border-white/5 flex flex-col justify-between hover:border-primary/30 transition-all"
+              >
+                <div>
+                  <div class="flex items-start justify-between gap-2 mb-1">
+                    <h4
+                      class="font-headline-sm text-on-surface font-bold text-lg"
+                    >
+                      Французький хот-дог (Баварський)
+                    </h4>
+                    <span
+                      class="text-primary font-bold text-lg font-price-num whitespace-nowrap"
+                      >90 ГРН</span
+                    >
+                  </div>
+                  <p class="text-xs text-on-surface-variant mb-4">
+                    Хрустка булочка, сосиска баварська, соуси
+                  </p>
+                </div>
+                <button
+                  onclick="addToCart('Французький хот-дог (Баварський)', 90)"
+                  class="w-full py-2 rounded-xl bg-primary-container text-on-primary-container font-bold text-xs hover:bg-secondary-container transition-all active:scale-95"
+                >
+                  + Додати до замовлення
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. CHEESE & DESERT LAB -->
+          <div
+            class="menu-section mb-space-2xl scroll-mt-28"
+            data-section="cheese-desert"
+          >
+            <h3
+              class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-2 mb-space-lg"
+            >
+              <span class="material-symbols-outlined text-primary text-[28px]"
+                >bakery_dining</span
+              >
+              <span>3. Cheese &amp; Desert Lab</span>
+            </h3>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md"
+            >
+              <div
+                class="p-space-md rounded-2xl bg-surface-container border border-white/5 flex flex-col justify-between hover:border-primary/30 transition-all"
+              >
+                <div>
+                  <div class="flex items-start justify-between gap-2 mb-1">
+                    <h4
+                      class="font-headline-sm text-on-surface font-bold text-lg"
+                    >
+                      Сулугуні в лаваші
+                    </h4>
+                    <span
+                      class="text-primary font-bold text-lg font-price-num whitespace-nowrap"
+                      >130 ГРН</span
+                    >
+                  </div>
+                  <p class="text-xs text-on-surface-variant mb-4">
+                    Багато сиру сулугуні, кріп, петрушка, фірмовий соус
+                  </p>
+                </div>
+                <button
+                  onclick="addToCart('Сулугуні в лаваші', 130)"
+                  class="w-full py-2 rounded-xl bg-primary-container text-on-primary-container font-bold text-xs hover:bg-secondary-container transition-all active:scale-95"
+                >
+                  + Додати до замовлення
+                </button>
+              </div>
+
+              <div
+                class="p-space-md rounded-2xl bg-surface-container border border-white/5 flex flex-col justify-between hover:border-primary/30 transition-all"
+              >
+                <div>
+                  <div class="flex items-start justify-between gap-2 mb-1">
+                    <h4
+                      class="font-headline-sm text-on-surface font-bold text-lg"
+                    >
+                      Сулугуні по-грузинські
+                    </h4>
+                    <span
+                      class="text-primary font-bold text-lg font-price-num whitespace-nowrap"
+                      >150 ГРН</span
+                    >
+                  </div>
+                  <p class="text-xs text-on-surface-variant mb-4">
+                    Сир сулугуні, грибочки, маринована цибуля, кріп, петрушка,
+                    фірмовий соус
+                  </p>
+                </div>
+                <button
+                  onclick="addToCart('Сулугуні по-грузинські', 150)"
+                  class="w-full py-2 rounded-xl bg-primary-container text-on-primary-container font-bold text-xs hover:bg-secondary-container transition-all active:scale-95"
+                >
+                  + Додати до замовлення
+                </button>
+              </div>
+
+              <!-- Хіт Десерт Choco Лаваш з використанням зображення з drinks.html -->
+              <div
+                class="p-space-md rounded-2xl bg-surface-container border border-white/5 flex flex-col justify-between hover:border-primary/30 transition-all group"
+              >
+                <div>
+                  <div class="w-full h-40 rounded-xl overflow-hidden mb-3 border border-white/5">
+                    <img 
+                      src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?q=80&w=800&auto=format&fit=crop" 
+                      alt="Choco Лаваш" 
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+                    />
+                  </div>
+                  <div class="flex items-start justify-between gap-2 mb-1">
+                    <h4
+                      class="font-headline-sm text-on-surface font-bold text-lg"
+                    >
+                      Choco Лаваш
+                    </h4>
+                    <span
+                      class="text-primary font-bold text-lg font-price-num whitespace-nowrap"
+                      >150 ГРН</span
+                    >
+                  </div>
+                  <p class="text-xs text-on-surface-variant mb-4">
+                    Лаваш, Nutella, банани або ананас.
+                  </p>
+                </div>
+                <button
+                  onclick="addToCart('Choco Лаваш', 150)"
+                  class="w-full py-2 rounded-xl bg-primary-container text-on-primary-container font-bold text-xs hover:bg-secondary-container transition-all active:scale-95"
+                >
+                  + Додати до замовлення
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. FRY BOX & СОУСИ -->
+          <div
+            class="menu-section mb-space-2xl scroll-mt-28"
+            data-section="fry-box"
+          >
+            <h3
+              class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-2 mb-space-lg"
+            >
+              <span class="material-symbols-outlined text-primary text-[28px]"
+                >local_mall</span
+              >
+              <span>4. Fry Box &amp; Соуси</span>
+            </h3>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md"
+            >
+              <div
+                class="p-space-md rounded-2xl bg-surface-container border border-white/5 flex flex-col justify-between hover:border-primary/30 transition-all group"
+              >
+                <div>
+                  <div class="w-full h-32 rounded-xl overflow-hidden mb-3 border border-white/5">
+                    <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?q=80&w=800&auto=format&fit=crop" alt="Картопля Фрі" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <h4
+                    class="font-headline-sm text-on-surface font-bold text-lg"
+                  >
+                    Картопля Фрі
+                  </h4>
+                  <span
+                    class="text-primary font-bold text-lg font-price-num block mt-1 mb-4"
+                    >80 ГРН</span
+                  >
+                </div>
+                <button
+                  onclick="addToCart('Картопля Фрі', 80)"
+                  class="w-full py-2 rounded-xl bg-primary-container text-on-primary-container font-bold text-xs hover:bg-secondary-container transition-all active:scale-95"
+                >
+                  + Додати до замовлення
+                </button>
+              </div>
+
+              <div
+                class="p-space-md rounded-2xl bg-surface-container border border-white/5 flex flex-col justify-between hover:border-primary/30 transition-all group"
+              >
+                <div>
+                  <div class="w-full h-32 rounded-xl overflow-hidden mb-3 border border-white/5">
+                    <img src="https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?q=80&w=800&auto=format&fit=crop" alt="Картопля по-селянськи" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <h4
+                    class="font-headline-sm text-on-surface font-bold text-lg"
+                  >
+                    Картопля по-селянськи
+                  </h4>
+                  <span
+                    class="text-primary font-bold text-lg font-price-num block mt-1 mb-4"
+                    >80 ГРН</span
+                  >
+                </div>
+                <button
+                  onclick="addToCart('Картопля по-селянськи', 80)"
+                  class="w-full py-2 rounded-xl bg-primary-container text-on-primary-container font-bold text-xs hover:bg-secondary-container transition-all active:scale-95"
+                >
+                  + Додати до замовлення
+                </button>
+              </div>
+
+              <div
+                class="p-space-md rounded-2xl bg-surface-container border border-white/5 flex flex-col justify-between hover:border-primary/30 transition-all group"
+              >
+                <div>
+                  <div class="w-full h-32 rounded-xl overflow-hidden mb-3 border border-white/5">
+                    <img src="https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=800&auto=format&fit=crop" alt="Нагетси" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <h4
+                    class="font-headline-sm text-on-surface font-bold text-lg"
+                  >
+                    Нагетси (6 шт)
+                  </h4>
+                  <span
+                    class="text-primary font-bold text-lg font-price-num block mt-1 mb-4"
+                    >100 ГРН</span
+                  >
+                </div>
+                <button
+                  onclick="addToCart('Нагетси (6 шт)', 100)"
+                  class="w-full py-2 rounded-xl bg-primary-container text-on-primary-container font-bold text-xs hover:bg-secondary-container transition-all active:scale-95"
+                >
+                  + Додати до замовлення
+                </button>
+              </div>
+
+              <div
+                class="p-space-md rounded-2xl bg-surface-container border border-white/5 flex flex-col justify-between hover:border-primary/30 transition-all group"
+              >
+                <div>
+                  <div class="w-full h-32 rounded-xl overflow-hidden mb-3 border border-white/5">
+                    <img src="https://images.unsplash.com/photo-1472476443507-c7a5948772fc?q=80&w=800&auto=format&fit=crop" alt="Соус" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                  </div>
+                  <h4
+                    class="font-headline-sm text-on-surface font-bold text-lg"
+                  >
+                    Соус в асортименті
+                  </h4>
+                  <span
+                    class="text-primary font-bold text-lg font-price-num block mt-1 mb-4"
+                    >30 ГРН</span
+                  >
+                </div>
+                <button
+                  onclick="addToCart('Соус в асортименті', 30)"
+                  class="w-full py-2 rounded-xl bg-primary-container text-on-primary-container font-bold text-xs hover:bg-secondary-container transition-all active:scale-95"
+                >
+                  + Додати до замовлення
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. ДОПИ (ДОБАВКИ) -->
+          <div
+            class="menu-section mb-space-2xl scroll-mt-28"
+            data-section="dopi"
+          >
+            <h3
+              class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-2 mb-space-lg"
+            >
+              <span class="material-symbols-outlined text-primary text-[28px]"
+                >add_circle</span
+              >
+              <span>5. Допи (Добавки)</span>
+            </h3>
+            <div
+              class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-space-sm"
+            >
+              <div
+                class="p-3 rounded-xl bg-surface-container border border-white/5 flex flex-col justify-between text-center hover:border-primary/30 transition-all"
+              >
+                <span
+                  class="font-body-sm font-semibold text-on-surface text-xs sm:text-sm"
+                  >Доп м'ясо</span
+                >
+                <span class="text-primary font-bold text-xs my-1">+45 ГРН</span>
+                <button
+                  onclick="addToCart('Доп: М\'ясо', 45)"
+                  class="w-full py-1 rounded-lg bg-primary-container/20 text-primary hover:bg-primary-container hover:text-on-primary-container font-bold text-[11px] transition-all active:scale-95"
+                >
+                  + Додати
+                </button>
+              </div>
+
+              <div
+                class="p-3 rounded-xl bg-surface-container border border-white/5 flex flex-col justify-between text-center hover:border-primary/30 transition-all"
+              >
+                <span
+                  class="font-body-sm font-semibold text-on-surface text-xs sm:text-sm"
+                  >Сосиска</span
+                >
+                <span class="text-primary font-bold text-xs my-1">+30 ГРН</span>
+                <button
+                  onclick="addToCart('Доп: Сосиска', 30)"
+                  class="w-full py-1 rounded-lg bg-primary-container/20 text-primary hover:bg-primary-container hover:text-on-primary-container font-bold text-[11px] transition-all active:scale-95"
+                >
+                  + Додати
+                </button>
+              </div>
+
+              <div
+                class="p-3 rounded-xl bg-surface-container border border-white/5 flex flex-col justify-between text-center hover:border-primary/30 transition-all"
+              >
+                <span
+                  class="font-body-sm font-semibold text-on-surface text-xs sm:text-sm"
+                  >Сир</span
+                >
+                <span class="text-primary font-bold text-xs my-1">+30 ГРН</span>
+                <button
+                  onclick="addToCart('Доп: Сир', 30)"
+                  class="w-full py-1 rounded-lg bg-primary-container/20 text-primary hover:bg-primary-container hover:text-on-primary-container font-bold text-[11px] transition-all active:scale-95"
+                >
+                  + Додати
+                </button>
+              </div>
+
+              <div
+                class="p-3 rounded-xl bg-surface-container border border-white/5 flex flex-col justify-between text-center hover:border-primary/30 transition-all"
+              >
+                <span
+                  class="font-body-sm font-semibold text-on-surface text-xs sm:text-sm"
+                  >Огірок маринований</span
+                >
+                <span class="text-primary font-bold text-xs my-1">+15 ГРН</span>
+                <button
+                  onclick="addToCart('Доп: Огірок маринований', 15)"
+                  class="w-full py-1 rounded-lg bg-primary-container/20 text-primary hover:bg-primary-container hover:text-on-primary-container font-bold text-[11px] transition-all active:scale-95"
+                >
+                  + Додати
+                </button>
+              </div>
+
+              <div
+                class="p-3 rounded-xl bg-surface-container border border-white/5 flex flex-col justify-between text-center hover:border-primary/30 transition-all"
+              >
+                <span
+                  class="font-body-sm font-semibold text-on-surface text-xs sm:text-sm"
+                  >Грибочки</span
+                >
+                <span class="text-primary font-bold text-xs my-1">+20 ГРН</span>
+                <button
+                  onclick="addToCart('Доп: Грибочки', 20)"
+                  class="w-full py-1 rounded-lg bg-primary-container/20 text-primary hover:bg-primary-container hover:text-on-primary-container font-bold text-[11px] transition-all active:scale-95"
+                >
+                  + Додати
+                </button>
+              </div>
+
+              <div
+                class="p-3 rounded-xl bg-surface-container border border-white/5 flex flex-col justify-between text-center hover:border-primary/30 transition-all"
+              >
+                <span
+                  class="font-body-sm font-semibold text-on-surface text-xs sm:text-sm"
+                  >Цибуля маринована</span
+                >
+                <span class="text-primary font-bold text-xs my-1">+10 ГРН</span>
+                <button
+                  onclick="addToCart('Доп: Цибуля маринована', 10)"
+                  class="w-full py-1 rounded-lg bg-primary-container/20 text-primary hover:bg-primary-container hover:text-on-primary-container font-bold text-[11px] transition-all active:scale-95"
+                >
+                  + Додати
+                </button>
+              </div>
+
+              <div
+                class="p-3 rounded-xl bg-surface-container border border-white/5 flex flex-col justify-between text-center hover:border-primary/30 transition-all"
+              >
+                <span
+                  class="font-body-sm font-semibold text-on-surface text-xs sm:text-sm"
+                  >Помідор</span
+                >
+                <span class="text-primary font-bold text-xs my-1">+20 ГРН</span>
+                <button
+                  onclick="addToCart('Доп: Помідор', 20)"
+                  class="w-full py-1 rounded-lg bg-primary-container/20 text-primary hover:bg-primary-container hover:text-on-primary-container font-bold text-[11px] transition-all active:scale-95"
+                >
+                  + Додати
+                </button>
+              </div>
+
+              <div
+                class="p-3 rounded-xl bg-surface-container border border-white/5 flex flex-col justify-between text-center hover:border-primary/30 transition-all"
+              >
+                <span
+                  class="font-body-sm font-semibold text-on-surface text-xs sm:text-sm"
+                  >Маслини, оливки</span
+                >
+                <span class="text-primary font-bold text-xs my-1">+30 ГРН</span>
+                <button
+                  onclick="addToCart('Доп: Маслини, оливки', 30)"
+                  class="w-full py-1 rounded-lg bg-primary-container/20 text-primary hover:bg-primary-container hover:text-on-primary-container font-bold text-[11px] transition-all active:scale-95"
+                >
+                  + Додати
+                </button>
+              </div>
+
+              <div
+                class="p-3 rounded-xl bg-surface-container border border-white/5 flex flex-col justify-between text-center hover:border-primary/30 transition-all"
+              >
+                <span
+                  class="font-body-sm font-semibold text-on-surface text-xs sm:text-sm"
+                  >Картопля фрі</span
+                >
+                <span class="text-primary font-bold text-xs my-1">+30 ГРН</span>
+                <button
+                  onclick="addToCart('Доп: Картопля фрі', 30)"
+                  class="w-full py-1 rounded-lg bg-primary-container/20 text-primary hover:bg-primary-container hover:text-on-primary-container font-bold text-[11px] transition-all active:scale-95"
+                >
+                  + Додати
+                </button>
+              </div>
+
+              <div
+                class="p-3 rounded-xl bg-surface-container border border-white/5 flex flex-col justify-between text-center hover:border-primary/30 transition-all"
+              >
+                <span
+                  class="font-body-sm font-semibold text-on-surface text-xs sm:text-sm"
+                  >Корейська морквина</span
+                >
+                <span class="text-primary font-bold text-xs my-1">+20 ГРН</span>
+                <button
+                  onclick="addToCart('Доп: Корейська морквина', 20)"
+                  class="w-full py-1 rounded-lg bg-primary-container/20 text-primary hover:bg-primary-container hover:text-on-primary-container font-bold text-[11px] transition-all active:scale-95"
+                >
+                  + Додати
+                </button>
+              </div>
+
+              <div
+                class="p-3 rounded-xl bg-surface-container border border-white/5 flex flex-col justify-between text-center hover:border-primary/30 transition-all"
+              >
+                <span
+                  class="font-body-sm font-semibold text-on-surface text-xs sm:text-sm"
+                  >Ананас</span
+                >
+                <span class="text-primary font-bold text-xs my-1">+30 ГРН</span>
+                <button
+                  onclick="addToCart('Доп: Ананас', 30)"
+                  class="w-full py-1 rounded-lg bg-primary-container/20 text-primary hover:bg-primary-container hover:text-on-primary-container font-bold text-[11px] transition-all active:scale-95"
+                >
+                  + Додати
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. НАПОЇ, КАВА ТА КОКТЕЙЛІ (З ФОТО І ОПИСАМИ З DRINKS.HTML) -->
+          <div
+            class="menu-section mb-space-2xl scroll-mt-28"
+            data-section="drinks"
+            id="drinks-section"
+          >
+            <div class="flex items-center justify-between mb-space-lg">
+              <h3
+                class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined text-primary text-[28px]"
+                  >local_cafe</span
+                >
+                <span>6. Напої, Кава та Коктейлі</span>
+              </h3>
+            </div>
+
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-space-md items-start"
+            >
+              <!-- 1. БЕЗАЛКОГОЛЬНІ НАПОЇ -->
+              <div
+                class="p-space-md rounded-2xl bg-surface-container flex flex-col justify-between border border-white/5 hover:border-primary/20 transition-all shadow-lg min-h-[420px]"
+              >
+                <div class="flex flex-col gap-space-xs">
+                  <h4
+                    class="font-headline-sm text-primary uppercase text-center font-bold tracking-wider text-xs border-b border-white/10 pb-2 mb-1"
+                  >
+                    БЕЗАЛКОГОЛЬНІ НАПОЇ
+                  </h4>
+
+                  <div
+                    class="flex items-center justify-between gap-2 p-2 rounded-xl bg-surface-container-high/40 hover:bg-surface-container-high border border-white/5 transition-all"
+                  >
+                    <div class="flex items-center gap-2 min-w-0 pr-1">
+                      <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=800&auto=format&fit=crop" alt="Кола" class="w-8 h-8 rounded-lg object-cover flex-shrink-0">
+                      <div class="flex flex-col truncate">
+                        <span class="font-body-sm font-semibold text-on-surface text-xs truncate">Кола / Фанта / Спрайт</span>
+                        <span class="text-primary font-bold font-price-num text-xs">40 ГРН</span>
+                      </div>
+                    </div>
+                    <button
+                      onclick="addToCart('Кола / Фанта / Спрайт', 40)"
+                      class="flex-shrink-0 px-2.5 py-1.5 rounded-lg bg-primary-container/15 hover:bg-primary-container text-primary hover:text-on-primary-container border border-primary-container/30 font-headline-sm text-xs font-bold transition-all active:scale-95"
+                    >
+                      +
+                    </button>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between gap-2 p-2 rounded-xl bg-surface-container-high/40 hover:bg-surface-container-high border border-white/5 transition-all"
+                  >
+                    <div class="flex items-center gap-2 min-w-0 pr-1">
+                      <img src="https://images.unsplash.com/photo-1548839140-29a749e1bc4e?q=80&w=800&auto=format&fit=crop" alt="Вода" class="w-8 h-8 rounded-lg object-cover flex-shrink-0">
+                      <div class="flex flex-col truncate">
+                        <span class="font-body-sm font-semibold text-on-surface text-xs truncate">Вода</span>
+                        <span class="text-primary font-bold font-price-num text-xs">30 ГРН</span>
+                      </div>
+                    </div>
+                    <button
+                      onclick="addToCart('Вода', 30)"
+                      class="flex-shrink-0 px-2.5 py-1.5 rounded-lg bg-primary-container/15 hover:bg-primary-container text-primary hover:text-on-primary-container border border-primary-container/30 font-headline-sm text-xs font-bold transition-all active:scale-95"
+                    >
+                      +
+                    </button>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between gap-2 p-2 rounded-xl bg-surface-container-high/40 hover:bg-surface-container-high border border-white/5 transition-all"
+                  >
+                    <div class="flex items-center gap-2 min-w-0 pr-1">
+                      <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=800&auto=format&fit=crop" alt="Лимонад" class="w-8 h-8 rounded-lg object-cover flex-shrink-0">
+                      <div class="flex flex-col truncate">
+                        <span class="font-body-sm font-semibold text-on-surface text-xs truncate">Лимонад</span>
+                        <span class="text-primary font-bold font-price-num text-xs">50 ГРН</span>
+                      </div>
+                    </div>
+                    <button
+                      onclick="addToCart('Лимонад', 50)"
+                      class="flex-shrink-0 px-2.5 py-1.5 rounded-lg bg-primary-container/15 hover:bg-primary-container text-primary hover:text-on-primary-container border border-primary-container/30 font-headline-sm text-xs font-bold transition-all active:scale-95"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2. КЛАСИЧНА КАВА -->
+              <div
+                class="p-space-md rounded-2xl bg-surface-container flex flex-col justify-between border border-white/5 hover:border-primary/20 transition-all shadow-lg min-h-[420px]"
+              >
+                <div class="flex flex-col gap-space-xs">
+                  <h4
+                    class="font-headline-sm text-primary uppercase text-center font-bold tracking-wider text-xs border-b border-white/10 pb-2 mb-1"
+                  >
+                    КЛАСИЧНА КАВА
+                  </h4>
+
+                  <div
+                    class="flex items-center justify-between gap-2 p-2 rounded-xl bg-surface-container-high/40 hover:bg-surface-container-high border border-white/5 transition-all"
+                  >
+                    <div class="flex items-center gap-2 min-w-0 pr-1">
+                      <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?q=80&w=800&auto=format&fit=crop" alt="Еспресо" class="w-8 h-8 rounded-lg object-cover flex-shrink-0">
+                      <div class="flex flex-col truncate">
+                        <span class="font-body-sm font-semibold text-on-surface text-xs truncate">Еспресо</span>
+                        <span class="text-primary font-bold font-price-num text-xs">40 ГРН</span>
+                      </div>
+                    </div>
+                    <button
+                      onclick="addToCart('Еспресо', 40)"
+                      class="flex-shrink-0 px-2.5 py-1.5 rounded-lg bg-primary-container/15 hover:bg-primary-container text-primary hover:text-on-primary-container border border-primary-container/30 font-headline-sm text-xs font-bold transition-all active:scale-95"
+                    >
+                      +
+                    </button>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between gap-2 p-2 rounded-xl bg-surface-container-high/40 hover:bg-surface-container-high border border-white/5 transition-all"
+                  >
+                    <div class="flex items-center gap-2 min-w-0 pr-1">
+                      <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop" alt="Доппіо" class="w-8 h-8 rounded-lg object-cover flex-shrink-0">
+                      <div class="flex flex-col truncate">
+                        <span class="font-body-sm font-semibold text-on-surface text-xs truncate">Доппіо</span>
+                        <span class="text-primary font-bold font-price-num text-xs">55 ГРН</span>
+                      </div>
+                    </div>
+                    <button
+                      onclick="addToCart('Доппіо', 55)"
+                      class="flex-shrink-0 px-2.5 py-1.5 rounded-lg bg-primary-container/15 hover:bg-primary-container text-primary hover:text-on-primary-container border border-primary-container/30 font-headline-sm text-xs font-bold transition-all active:scale-95"
+                    >
+                      +
+                    </button>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between gap-2 p-2 rounded-xl bg-surface-container-high/40 hover:bg-surface-container-high border border-white/5 transition-all"
+                  >
+                    <div class="flex items-center gap-2 min-w-0 pr-1">
+                      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop" alt="Американо" class="w-8 h-8 rounded-lg object-cover flex-shrink-0">
+                      <div class="flex flex-col truncate">
+                        <span class="font-body-sm font-semibold text-on-surface text-xs truncate">Американо</span>
+                        <span class="text-primary font-bold font-price-num text-xs">50 ГРН</span>
+                      </div>
+                    </div>
+                    <button
+                      onclick="addToCart('Американо', 50)"
+                      class="flex-shrink-0 px-2.5 py-1.5 rounded-lg bg-primary-container/15 hover:bg-primary-container text-primary hover:text-on-primary-container border border-primary-container/30 font-headline-sm text-xs font-bold transition-all active:scale-95"
+                    >
+                      +
+                    </button>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between gap-2 p-2 rounded-xl bg-surface-container-high/40 hover:bg-surface-container-high border border-white/5 transition-all"
+                  >
+                    <div class="flex items-center gap-2 min-w-0 pr-1">
+                      <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=800&auto=format&fit=crop" alt="Американо з молоком" class="w-8 h-8 rounded-lg object-cover flex-shrink-0">
+                      <div class="flex flex-col truncate">
+                        <span class="font-body-sm font-semibold text-on-surface text-xs truncate">Американо з мол.</span>
+                        <span class="text-primary font-bold font-price-num text-xs">60 ГРН</span>
+                      </div>
+                    </div>
+                    <button
+                      onclick="addToCart('Американо з молоком', 60)"
+                      class="flex-shrink-0 px-2.5 py-1.5 rounded-lg bg-primary-container/15 hover:bg-primary-container text-primary hover:text-on-primary-container border border-primary-container/30 font-headline-sm text-xs font-bold transition-all active:scale-95"
+                    >
+                      +
+                    </button>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between gap-2 p-2 rounded-xl bg-surface-container-high/40 hover:bg-surface-container-high border border-white/5 transition-all"
+                  >
+                    <div class="flex items-center gap-2 min-w-0 pr-1">
+                      <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?q=80&w=800&auto=format&fit=crop" alt="Капучино" class="w-8 h-8 rounded-lg object-cover flex-shrink-0">
+                      <div class="flex flex-col truncate">
+                        <span class="font-body-sm font-semibold text-on-surface text-xs truncate">Капучино / Лате / Флет</span>
+                        <span class="text-primary font-bold font-price-num text-xs">80 ГРН</span>
+                      </div>
+                    </div>
+                    <button
+                      onclick="addToCart('Капучино / Лате / Флет уайт', 80)"
+                      class="flex-shrink-0 px-2.5 py-1.5 rounded-lg bg-primary-container/15 hover:bg-primary-container text-primary hover:text-on-primary-container border border-primary-container/30 font-headline-sm text-xs font-bold transition-all active:scale-95"
+                    >
+                      +
+                    </button>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between gap-2 p-2 rounded-xl bg-surface-container-high/40 hover:bg-surface-container-high border border-white/5 transition-all"
+                  >
+                    <div class="flex items-center gap-2 min-w-0 pr-1">
+                      <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80&w=800&auto=format&fit=crop" alt="Лате солона карамель" class="w-8 h-8 rounded-lg object-cover flex-shrink-0">
+                      <div class="flex flex-col truncate">
+                        <span class="font-body-sm font-semibold text-on-surface text-xs truncate">Лате сол. карамель</span>
+                        <span class="text-primary font-bold font-price-num text-xs">100 ГРН</span>
+                      </div>
+                    </div>
+                    <button
+                      onclick="addToCart('Лате солона карамель', 100)"
+                      class="flex-shrink-0 px-2.5 py-1.5 rounded-lg bg-primary-container/15 hover:bg-primary-container text-primary hover:text-on-primary-container border border-primary-container/30 font-headline-sm text-xs font-bold transition-all active:scale-95"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3. ХОЛОДНА КАВА -->
+              <div
+                class="p-space-md rounded-2xl bg-surface-container flex flex-col justify-between border border-white/5 hover:border-primary/20 transition-all shadow-lg min-h-[420px]"
+              >
+                <div class="flex flex-col gap-space-xs">
+                  <h4
+                    class="font-headline-sm text-primary uppercase text-center font-bold tracking-wider text-xs border-b border-white/10 pb-2 mb-1"
+                  >
+                    ХОЛОДНА КАВА
+                  </h4>
+
+                  <div
+                    class="flex items-center justify-between gap-2 p-2 rounded-xl bg-surface-container-high/40 hover:bg-surface-container-high border border-white/5 transition-all"
+                  >
+                    <div class="flex items-center gap-2 min-w-0 pr-1">
+                      <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=800&auto=format&fit=crop" alt="Ice лате" class="w-8 h-8 rounded-lg object-cover flex-shrink-0">
+                      <div class="flex flex-col truncate">
+                        <span class="font-body-sm font-semibold text-on-surface text-xs truncate">Ice лате / капучино</span>
+                        <span class="text-primary font-bold font-price-num text-xs">90 ГРН</span>
+                      </div>
+                    </div>
+                    <button
+                      onclick="addToCart('Ice лате / Ice капучино', 90)"
+                      class="flex-shrink-0 px-2.5 py-1.5 rounded-lg bg-primary-container/15 hover:bg-primary-container text-primary hover:text-on-primary-container border border-primary-container/30 font-headline-sm text-xs font-bold transition-all active:scale-95"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4. ЧАЙ -->
+              <div
+                class="p-space-md rounded-2xl bg-surface-container flex flex-col justify-between border border-white/5 hover:border-primary/20 transition-all shadow-lg min-h-[420px]"
+              >
+                <div class="flex flex-col gap-space-xs">
+                  <h4
+                    class="font-headline-sm text-primary uppercase text-center font-bold tracking-wider text-xs border-b border-white/10 pb-2 mb-1"
+                  >
+                    ЧАЙ
+                  </h4>
+
+                  <div
+                    class="flex items-center justify-between gap-2 p-2 rounded-xl bg-surface-container-high/40 hover:bg-surface-container-high border border-white/5 transition-all"
+                  >
+                    <div class="flex items-center gap-2 min-w-0 pr-1">
+                      <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=800&auto=format&fit=crop" alt="Чай в асортименті" class="w-8 h-8 rounded-lg object-cover flex-shrink-0">
+                      <div class="flex flex-col truncate">
+                        <span class="font-body-sm font-semibold text-on-surface text-xs truncate">Чай в асортименті</span>
+                        <span class="text-primary font-bold font-price-num text-xs">50 ГРН</span>
+                      </div>
+                    </div>
+                    <button
+                      onclick="addToCart('Чай в асортименті', 50)"
+                      class="flex-shrink-0 px-2.5 py-1.5 rounded-lg bg-primary-container/15 hover:bg-primary-container text-primary hover:text-on-primary-container border border-primary-container/30 font-headline-sm text-xs font-bold transition-all active:scale-95"
+                    >
+                      +
+                    </button>
+                  </div>
+
+                  <div
+                    class="flex items-center justify-between gap-2 p-2 rounded-xl bg-surface-container-high/40 hover:bg-surface-container-high border border-white/5 transition-all"
+                  >
+                    <div class="flex items-center gap-2 min-w-0 pr-1">
+                      <img src="https://images.unsplash.com/photo-1597481499750-3e6b22637e12?q=80&w=800&auto=format&fit=crop" alt="Чай натуральний" class="w-8 h-8 rounded-lg object-cover flex-shrink-0">
+                      <div class="flex flex-col truncate">
+                        <span class="font-body-sm font-semibold text-on-surface text-xs truncate">Чай натуральний</span>
+                        <span class="text-primary font-bold font-price-num text-xs">90 ГРН</span>
+                      </div>
+                    </div>
+                    <button
+                      onclick="addToCart('Чай натуральний', 90)"
+                      class="flex-shrink-0 px-2.5 py-1.5 rounded-lg bg-primary-container/15 hover:bg-primary-container text-primary hover:text-on-primary-container border border-primary-container/30 font-headline-sm text-xs font-bold transition-all active:scale-95"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 5. КОКТЕЙЛІ ТА АВТОРСЬКІ НАПОЇ -->
+              <div
+                class="p-space-md rounded-2xl bg-surface-container flex flex-col justify-between border border-tertiary/30 hover:border-tertiary/60 transition-all shadow-lg min-h-[420px]"
+              >
+                <div class="flex flex-col gap-space-xs">
+                  <h4
+                    class="font-headline-sm text-tertiary uppercase text-center font-bold tracking-wider text-xs border-b border-white/10 pb-2 mb-1"
+                  >
+                    КОКТЕЙЛІ ТА АВТОРСЬКІ
+                  </h4>
+
+                  <div
+                    class="flex items-center justify-between gap-2 p-2 rounded-xl bg-surface-container-high/40 hover:bg-surface-container-high border border-white/5 transition-all"
+                  >
+                    <div class="flex items-center gap-2 min-w-0 pr-1">
+                      <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=800&auto=format&fit=crop" alt="Джміль / Коктейлі" class="w-8 h-8 rounded-lg object-cover flex-shrink-0">
+                      <div class="flex flex-col truncate">
+                        <span class="font-body-sm font-semibold text-on-surface text-xs truncate">Джміль / Коктейлі</span>
+                        <span class="text-xs text-on-surface-variant block font-normal truncate">Освіжаючі авторські</span>
+                        <span class="text-primary font-bold font-price-num text-xs">120 ГРН</span>
+                      </div>
+                    </div>
+                    <button
+                      onclick="addToCart('Джміль / Коктейлі', 120)"
+                      class="flex-shrink-0 px-2.5 py-1.5 rounded-lg bg-tertiary/15 hover:bg-tertiary text-tertiary hover:text-on-tertiary-container border border-tertiary/30 font-headline-sm text-xs font-bold transition-all active:scale-95"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  class="mt-4 p-2.5 rounded-xl bg-surface-container-high/60 border border-white/5 text-center text-[11px] text-on-surface-variant italic flex items-center justify-center gap-1.5"
+                >
+                  <span>❤️</span>
+                  <span>Сиропи в асортименті — безкоштовно</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ІНТЕРАКТИВНИЙ КОНСТРУКТОР ТА КОШИК -->
+      <section
+        class="w-full py-space-2xl bg-surface-container-low scroll-mt-28"
+        id="builder-section"
+      >
+        <div
+          class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop"
+        >
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start"
+          >
+            <div class="lg:col-span-5 flex flex-col gap-space-md">
+              <span
+                class="font-label-badge text-label-badge text-primary uppercase tracking-widest"
+                >Ваше замовлення</span
+              >
+              <h2 class="font-headline-xl text-headline-xl text-on-surface">
+                Зберіть замовлення
+              </h2>
+              <p class="font-body-lg text-on-surface-variant">
+                Обирайте будь-яку кількість страв та додатків. Калькулятор
+                підрахує вартість автоматично.
+              </p>
+            </div>
+
+            <div
+              class="lg:col-span-7 p-space-lg lg:p-space-xl rounded-3xl bg-surface-container shadow-2xl border border-white/5"
+            >
+              <div
+                class="flex flex-col gap-space-sm pb-space-md mb-space-md border-b border-surface-container-high"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span
+                      class="material-symbols-outlined text-primary text-[24px]"
+                      >receipt_long</span
+                    >
+                    <h3
+                      class="font-headline-lg text-headline-lg text-on-surface"
+                    >
+                      Ваш лист страв
+                    </h3>
+                  </div>
+                  <span
+                    id="cart-items-counter"
+                    class="px-space-sm py-1 rounded-full bg-surface-container-high text-primary font-label-badge uppercase font-bold text-xs"
+                    >0 позицій</span
+                  >
+                </div>
+              </div>
+
+              <!-- Список обраних товарів у кошику -->
+              <div
+                id="cart-items-list"
+                class="flex flex-col gap-space-sm mb-space-lg"
+              ></div>
+
+              <!-- Підсумок -->
+              <div
+                class="p-space-md rounded-2xl bg-surface-container-high flex flex-col gap-space-sm mb-space-lg border border-surface-container-highest"
+              >
+                <div
+                  class="flex flex-col sm:flex-row items-center justify-between gap-space-md"
+                >
+                  <div
+                    class="text-body-md text-on-surface-variant text-center sm:text-left"
+                  >
+                    <div
+                      id="calc-breakdown-text"
+                      class="font-medium text-xs sm:text-sm"
+                    >
+                      Всього у кошику: <strong>0 шт.</strong>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-space-xs">
+                    <span
+                      class="font-headline-sm uppercase text-on-surface-variant text-xs sm:text-sm"
+                      >РАЗОМ:</span
+                    >
+                    <span
+                      class="font-display-hero text-headline-xl text-primary font-bold"
+                      id="calc-total-text"
+                      >0</span
+                    >
+                    <span
+                      class="font-headline-sm text-primary font-bold text-sm"
+                      >ГРН</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Форма замовлення -->
+              <form class="flex flex-col gap-space-md" onsubmit="handleOrderSubmit(event)">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                  <input
+                    id="order-customer-name"
+                    class="w-full px-space-md py-space-xs rounded-xl bg-surface-container-high text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none border border-white/5 focus:border-primary transition-all"
+                    placeholder="Ім'я"
+                    required
+                    type="text"
+                  />
+                  <input
+                    id="order-customer-phone"
+                    class="w-full px-space-md py-space-xs rounded-xl bg-surface-container-high text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none border border-white/5 focus:border-primary transition-all"
+                    placeholder="Телефон"
+                    required
+                    type="tel"
+                    value="+380 "
+                  />
+                </div>
+
+                <!-- Блок вибору часу самовивозу -->
+                <div class="flex flex-col gap-1.5">
+                  <label class="text-xs font-bold text-on-surface-variant flex items-center gap-1">
+                    <span>🕐 ЧАС САМОВИВОЗУ:</span>
+                  </label>
+                  <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                    <label class="cursor-pointer">
+                      <input type="radio" name="pickup-time" value="Якнайшвидше" class="peer sr-only" checked />
+                      <div class="p-2.5 text-center text-xs font-bold rounded-xl bg-surface-container-high border border-white/5 peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary transition-all">
+                        ⚡ Якнайшвидше
+                      </div>
+                    </label>
+                    <label class="cursor-pointer">
+                      <input type="radio" name="pickup-time" value="Через 20 хвилин" class="peer sr-only" />
+                      <div class="p-2.5 text-center text-xs font-bold rounded-xl bg-surface-container-high border border-white/5 peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary transition-all">
+                        🕐 Через 20 хв
+                      </div>
+                    </label>
+                    <label class="cursor-pointer">
+                      <input type="radio" name="pickup-time" value="Через 30 хвилин" class="peer sr-only" />
+                      <div class="p-2.5 text-center text-xs font-bold rounded-xl bg-surface-container-high border border-white/5 peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary transition-all">
+                        🕐 Через 30 хв
+                      </div>
+                    </label>
+                    <label class="cursor-pointer">
+                      <input type="radio" name="pickup-time" value="Через 45 хвилин" class="peer sr-only" />
+                      <div class="p-2.5 text-center text-xs font-bold rounded-xl bg-surface-container-high border border-white/5 peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary transition-all">
+                        🕐 Через 45 хв
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Блок вибору способу оплати -->
+                <div class="flex flex-col gap-1.5">
+                  <label class="text-xs font-bold text-on-surface-variant flex items-center gap-1">
+                    <span>💳 СПОСІБ ОПЛАТИ:</span>
+                  </label>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <label class="cursor-pointer">
+                      <input type="radio" name="payment_method" value="Готівка" class="peer sr-only" checked />
+                      <div class="p-2.5 text-center text-xs font-bold rounded-xl bg-surface-container-high border border-white/5 peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary transition-all">
+                        💵 Готівкою при отриманні
+                      </div>
+                    </label>
+                    <label class="cursor-pointer">
+                      <input type="radio" name="payment_method" value="Термінал" class="peer sr-only" />
+                      <div class="p-2.5 text-center text-xs font-bold rounded-xl bg-surface-container-high border border-white/5 peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary transition-all">
+                        💳 Оплата карткою (Терміналом)
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <input
+                  id="order-customer-comment"
+                  class="w-full px-space-md py-space-xs rounded-xl bg-surface-container-high text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none border border-white/5 focus:border-primary transition-all"
+                  placeholder="Коментар до замовлення (напр. Без цибулі, Гострий соус)"
+                  type="text"
+                />
+                <button
+                  class="w-full py-space-md rounded-xl bg-primary-container text-on-primary-container font-headline-sm hover:bg-secondary-container transition-all shadow-xl font-bold active:scale-98 cursor-pointer"
+                  type="submit"
+                >
+                  🚀 Оформити самовивіз
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- МОДАЛЬНЕ ВІКНО ДОПІВ ДЛЯ ШАУРМИ -->
+    <div
+      id="dopi-modal"
+      class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto"
+    >
+      <div
+        class="relative w-full max-w-lg bg-surface-container rounded-3xl border border-white/10 p-6 shadow-2xl my-8"
+      >
+        <div
+          class="flex items-center justify-between pb-4 border-b border-white/10 mb-4"
+        >
+          <h3
+            id="modal-shawarma-title"
+            class="font-headline-lg text-lg sm:text-xl text-on-surface font-bold"
+          >
+            Оберіть добавки
+          </h3>
+          <button
+            onclick="closeDopiModal()"
+            type="button"
+            class="w-8 h-8 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer"
+          >
+            ✕
+          </button>
+        </div>
+
+        <div class="mb-6">
+          <p
+            class="text-xs text-on-surface-variant font-medium mb-3 uppercase tracking-wider"
+          >
+            Доступні добавки (допи):
+          </p>
+          <div
+            id="modal-dopi-list"
+            class="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-[50vh] overflow-y-auto pr-1"
+          ></div>
+        </div>
+
+        <div
+          class="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <div>
+            <span class="text-xs text-on-surface-variant block"
+              >Разом за одиницю:</span
+            >
+            <span
+              id="modal-total-price"
+              class="text-xl font-bold text-primary font-price-num"
+              >0 ГРН</span
+            >
+          </div>
+          <div class="flex items-center gap-2 w-full sm:w-auto">
+            <button
+              type="button"
+              onclick="confirmDopi(true)"
+              class="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-surface-container-high text-on-surface-variant hover:text-on-surface text-xs font-bold transition-all cursor-pointer"
+            >
+              Без допів
+            </button>
+            <button
+              type="button"
+              onclick="confirmDopi(false)"
+              class="flex-1 sm:flex-none px-5 py-2.5 rounded-xl bg-primary-container text-on-primary-container hover:bg-secondary-container text-xs font-bold transition-all shadow-lg cursor-pointer"
+            >
+              ✅ Додати
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- СКРИПТИ КЕРУВАННЯ СТАНОМ -->
+    <script>
+      window.labCart = [];
+      let nextItemId = 1;
+
+      // Повний список можливих добавок (допів)
+      const DOPI_LIST = [
+        { name: "М'ясо", price: 45 },
+        { name: "Сосиска", price: 30 },
+        { name: "Сир", price: 30 },
+        { name: "Огірок маринований", price: 15 },
+        { name: "Грибочки", price: 20 },
+        { name: "Цибуля маринована", price: 10 },
+        { name: "Помідор", price: 20 },
+        { name: "Маслини, оливки", price: 30 },
+        { name: "Картопля фрі", price: 30 },
+        { name: "Корейська морквина", price: 20 },
+        { name: "Ананас", price: 30 },
+      ];
+
+      let modalTarget = {
+        cartItemId: null,
+        name: "",
+        basePrice: 0,
+        selectedDopiIndexes: [],
+      };
+
+      // Фільтрація категорій меню
+      function filterMenu(category) {
+        const buttons = document.querySelectorAll(".cat-btn");
+        buttons.forEach((btn) => {
+          if (btn.getAttribute("data-cat") === category) {
+            btn.className =
+              "cat-btn px-space-md py-space-xs rounded-xl font-headline-sm whitespace-nowrap transition-all bg-primary-container text-on-primary-container font-bold cursor-pointer";
+          } else {
+            btn.className =
+              "cat-btn px-space-md py-space-xs rounded-xl font-headline-sm whitespace-nowrap transition-all bg-surface-container text-on-surface-variant hover:text-on-surface cursor-pointer";
+          }
+        });
+
+        const sections = document.querySelectorAll(".menu-section");
+        sections.forEach((section) => {
+          const sectionCat = section.getAttribute("data-section");
+          if (category === "all" || sectionCat === category) {
+            section.style.display = "block";
+          } else {
+            section.style.display = "none";
+          }
+        });
+      }
+
+      // Скролл до блоку конструктора
+      function scrollToBuilder() {
+        const el = document.getElementById("builder-section");
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }
+
+      // Відкриття модального вікна вибору допів для Шаурми
+      function openDopiModal(name, basePrice, cartItemId = null) {
+        modalTarget.cartItemId = cartItemId;
+        modalTarget.name = name;
+        modalTarget.basePrice = basePrice;
+
+        if (cartItemId) {
+          const existing = window.labCart.find((i) => i.id === cartItemId);
+          if (existing && existing.dopi) {
+            modalTarget.selectedDopiIndexes = DOPI_LIST.map((d, idx) =>
+              existing.dopi.some((ed) => ed.name === d.name) ? idx : -1,
+            ).filter((idx) => idx !== -1);
+          } else {
+            modalTarget.selectedDopiIndexes = [];
+          }
+        } else {
+          modalTarget.selectedDopiIndexes = [];
+        }
+
+        renderDopiModalContent();
+        document.getElementById("dopi-modal").classList.remove("hidden");
+      }
+
+      function closeDopiModal() {
+        document.getElementById("dopi-modal").classList.add("hidden");
+      }
+
+      function toggleDopIndex(index) {
+        const idxLocation = modalTarget.selectedDopiIndexes.indexOf(index);
+        if (idxLocation > -1) {
+          modalTarget.selectedDopiIndexes.splice(idxLocation, 1);
+        } else {
+          modalTarget.selectedDopiIndexes.push(index);
+        }
+        renderDopiModalContent();
+      }
+
+      function renderDopiModalContent() {
+        document.getElementById("modal-shawarma-title").innerText =
+          modalTarget.name;
+
+        const dopiContainer = document.getElementById("modal-dopi-list");
+        dopiContainer.innerHTML = DOPI_LIST.map((dop, idx) => {
+          const isChecked = modalTarget.selectedDopiIndexes.includes(idx);
+          return `
+            <label class="flex items-center justify-between p-3 rounded-xl bg-surface-container-high border cursor-pointer hover:border-primary/40 transition-all ${isChecked ? "border-primary bg-primary/10" : "border-white/5"}">
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" onchange="toggleDopIndex(${idx})" ${isChecked ? "checked" : ""} class="w-4 h-4 accent-primary rounded cursor-pointer">
+                    <span class="text-xs sm:text-sm font-semibold text-on-surface">${dop.name}</span>
+                </div>
+                <span class="text-xs font-bold text-primary">+${dop.price} грн</span>
+            </label>
+          `;
+        }).join("");
+
+        let dopiTotal = modalTarget.selectedDopiIndexes.reduce(
+          (sum, i) => sum + DOPI_LIST[i].price,
+          0
+        );
+        let totalPrice = modalTarget.basePrice + dopiTotal;
+
+        document.getElementById("modal-total-price").innerText =
+          totalPrice + " ГРН";
+      }
+
+      function confirmDopi(withoutDopi) {
+        const selectedDopi = withoutDopi
+          ? []
+          : modalTarget.selectedDopiIndexes.map((i) => DOPI_LIST[i]);
+
+        if (modalTarget.cartItemId) {
+          const item = window.labCart.find(
+            (i) => i.id === modalTarget.cartItemId
+          );
+          if (item) {
+            item.dopi = selectedDopi;
+            item.price =
+              item.basePrice +
+              selectedDopi.reduce((sum, d) => sum + d.price, 0);
+          }
+        } else {
+          let price =
+            modalTarget.basePrice +
+            selectedDopi.reduce((sum, d) => sum + d.price, 0);
+
+          window.labCart.push({
+            id: nextItemId++,
+            name: modalTarget.name,
+            basePrice: modalTarget.basePrice,
+            price: price,
+            qty: 1,
+            dopi: selectedDopi,
+          });
+        }
+
+        closeDopiModal();
+        renderCart();
+      }
+
+      function addToCart(name, price) {
+        const existing = window.labCart.find(
+          (i) => i.name === name && (!i.dopi || i.dopi.length === 0)
+        );
+        if (existing) {
+          existing.qty++;
+        } else {
+          window.labCart.push({
+            id: nextItemId++,
+            name: name,
+            basePrice: price,
+            price: price,
+            qty: 1,
+            dopi: [],
+          });
+        }
+        renderCart();
+      }
+
+      function changeQty(id, delta) {
+        const item = window.labCart.find((i) => i.id === id);
+        if (item) {
+          item.qty += delta;
+          if (item.qty <= 0) {
+            window.labCart = window.labCart.filter((i) => i.id !== id);
+          }
+        }
+        renderCart();
+      }
+
+      function editCartItemDopi(itemId) {
+        const item = window.labCart.find((i) => i.id === itemId);
+        if (item) {
+          openDopiModal(item.name, item.basePrice, item.id);
+        }
+      }
+
+      function renderCart() {
+        const cartContainer = document.getElementById("cart-items-list");
+        const totalCount = window.labCart.reduce((sum, i) => sum + i.qty, 0);
+        const totalPrice = window.labCart.reduce(
+          (sum, i) => sum + i.price * i.qty,
+          0
+        );
+
+        document.getElementById("header-cart-badge").innerText = totalCount;
+        document.getElementById("cart-items-counter").innerText =
+          totalCount + " позицій";
+        document.getElementById("calc-total-text").innerText = totalPrice;
+        document.getElementById("calc-breakdown-text").innerHTML =
+          `Всього у кошику: <strong>${totalCount} шт.</strong>`;
+
+        if (window.labCart.length === 0) {
+          cartContainer.innerHTML =
+            `<p class="text-xs text-on-surface-variant italic py-2">Кошик порожній. Оберіть страви вище.</p>`;
+          return;
+        }
+
+        cartContainer.innerHTML = window.labCart
+          .map((item) => {
+            let dopiStr = "";
+            if (item.dopi && item.dopi.length > 0) {
+              dopiStr = `<div class="text-[11px] text-primary mt-0.5">+ Допи: ${item.dopi.map((d) => d.name).join(", ")}</div>`;
+            }
+
+            return `
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3 rounded-xl bg-surface-container-high/60 border border-white/5 gap-2">
+              <div class="flex-1">
+                <span class="font-bold text-sm text-on-surface block">${item.name}</span>
+                ${dopiStr}
+                <span class="text-xs text-on-surface-variant font-price-num">${item.price} грн / шт.</span>
+              </div>
+              <div class="flex items-center gap-3 justify-between sm:justify-end">
+                ${
+                  item.basePrice && item.name.includes("Шаурма")
+                    ? `<button type="button" onclick="editCartItemDopi(${item.id})" class="text-[11px] text-tertiary underline cursor-pointer">Змінити допи</button>`
+                    : ""
+                }
+                <div class="flex items-center gap-1.5 bg-surface-container-highest px-2 py-1 rounded-lg">
+                  <button type="button" onclick="changeQty(${item.id}, -1)" class="w-6 h-6 flex items-center justify-center rounded bg-surface text-on-surface hover:text-primary font-bold text-xs">-</button>
+                  <span class="text-xs font-bold w-5 text-center text-on-surface">${item.qty}</span>
+                  <button type="button" onclick="changeQty(${item.id}, 1)" class="w-6 h-6 flex items-center justify-center rounded bg-surface text-on-surface hover:text-primary font-bold text-xs">+</button>
+                </div>
+                <span class="text-sm font-bold text-primary font-price-num min-w-[60px] text-right">${item.price * item.qty} грн</span>
+              </div>
+            </div>
+          `;
+          })
+          .join("");
+      }
+
+      function handleOrderSubmit(event) {
+        event.preventDefault();
+
+        if (window.labCart.length === 0) {
+          alert("Ваш кошик порожній!");
+          return;
+        }
+
+        const name = document.getElementById("order-customer-name").value;
+        const phone = document.getElementById("order-customer-phone").value;
+        const time = document.querySelector('input[name="pickup-time"]:checked').value;
+        const payment = document.querySelector('input[name="payment_method"]:checked').value;
+        const comment = document.getElementById("order-customer-comment").value;
+
+        let total = window.labCart.reduce((sum, i) => sum + i.price * i.qty, 0);
+
+        alert(
+          `Дякуємо за замовлення, ${name}!\nСамовивіз: ${time}\nСпосіб оплати: ${payment}\nСума: ${total} грн.\nМи вже готуємо ваші страви!`
+        );
+
+        window.labCart = [];
+        renderCart();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отзывы — Lavash Lab</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      color: #fff;
+      padding: 2.5rem 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      color: #ff9900;
+    }
+
+    /* Кнопка "На главную" */
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-back:hover {
+      background: #ff9900;
+      color: #fff;
+      border-color: #ff9900;
+    }
+
+    header .btn-back {
+      position: absolute;
+      left: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .top-nav {
+      margin-bottom: 1.5rem;
+    }
+
+    .top-nav .btn-back {
+      color: #333;
+      background: #fff;
+      border: 1px solid #ccc;
+    }
+
+    .top-nav .btn-back:hover {
+      color: #fff;
+      background: #ff9900;
+      border-color: #ff9900;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    /* Панель управления (Рейтинг, Фильтры, Сортировка) */
+    .controls-panel {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .rating-summary {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .score-number {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #1a1a1a;
+      line-height: 1;
+    }
+
+    .stars-total {
+      color: #ffc107;
+      font-size: 1.4rem;
+    }
+
+    .total-reviews {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .filter-sort-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-top: 1px solid #eee;
+      padding-top: 1rem;
+    }
+
+    .filter-buttons {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-filter {
+      background: #f0f0f0;
+      border: 1px solid #ddd;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-filter.active, .btn-filter:hover {
+      background: #ff9900;
+      color: #fff;
+      border-color: #ff9900;
+    }
+
+    .sort-group select {
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 0.9rem;
+      outline: none;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    /* Сетка отзывов */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .review-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid #eee;
+      transition: transform 0.2s ease;
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .author-name {
+      font-weight: bold;
+      font-size: 1.05rem;
+      color: #222;
+    }
+
+    .card-stars {
+      color: #ffc107;
+      font-size: 1.1rem;
+    }
+
+    .review-body {
+      font-size: 0.95rem;
+      color: #444;
+      margin-bottom: 1rem;
+      word-wrap: break-word;
+    }
+
+    .review-footer {
+      font-size: 0.8rem;
+      color: #888;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px dashed #eee;
+      padding-top: 0.8rem;
+    }
+
+    .no-reviews {
+      text-align: center;
+      grid-column: 1 / -1;
+      padding: 3rem;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      header .btn-back {
+        position: static;
+        transform: none;
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Lavash Lab</h1>
+    <p>Отзывы посетителей с Google Карт</p>
+  </header>
+
+  <div class="container">
+    
+    <div class="top-nav">
+      <a href="index.html" class="btn-back">← Вернуться на сайт</a>
+    </div>
+
+    <!-- Панель управления -->
+    <div class="controls-panel">
+      <div class="rating-summary">
+        <div class="score-number">4.5</div>
+        <div>
+          <div class="stars-total">★★★★★</div>
+          <div class="total-reviews">На основе 53 оценок (48 с текстом)</div>
+        </div>
+      </div>
+      
+      <div class="filter-sort-wrapper">
+        <div class="filter-buttons">
+          <button class="btn-filter active" onclick="filterReviews('all', this)">Все отзывы</button>
+          <button class="btn-filter" onclick="filterReviews(5, this)">5 ★</button>
+          <button class="btn-filter" onclick="filterReviews(1, this)">1 ★</button>
+        </div>
+
+        <div class="sort-group">
+          <label for="sortSelect">Сортировка: </label>
+          <select id="sortSelect" onchange="sortReviews()">
+            <option value="newest">Сначала новые</option>
+            <option value="oldest">Сначала старые</option>
+            <option value="highest">Сначала с высокой оценкой</option>
+            <option value="lowest">Сначала с низкой оценкой</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Контейнер отзывов -->
+    <div class="reviews-grid" id="reviewsGrid"></div>
+
+  </div>
+
+  <script>
+    // Все 48 отзывов с текстом из списка
+    const reviewsData = [
+      { id: 1, author: "me", rating: 5, text: "самая вкусная шаурма в Одессе, очень рекомендую это место, обязательно рекомендую к посещению" },
+      { id: 2, author: "Dmitry 029", rating: 5, text: "Лучшая шаурма в районе! Лаваш тонкий и хрустящий, мясо сочное, маринованное, овощи свежие, а соус чесночный — просто бомба. Порция огромная, наедаюсь до отвала. Готовят быстро, даже в час пик. Цена полностью соответствует качеству. Однозначно рекомендую!" },
+      { id: 3, author: "Настя Токаренко", rating: 5, text: "(Оценка 5/5, без подробного текста)" },
+      { id: 4, author: "Vika Goncharuk", rating: 5, text: "Очень классное заведение, хорошие цены и приветливый персонал 🤗" },
+      { id: 5, author: "Alesia Burma", rating: 5, text: "Зашла за перекусом, а получила море позитива на весь день! 😊 Шаурма – супер, лаваш тает во рту. Но главная звезда этого места – Янина! Такая веселая, классная, улыбающаяся девочка, превращающая обычное приготовление пищи в настоящее шоу. Спасибо за вкусность и отличное настроение! Вы супер! ✨" },
+      { id: 6, author: "Віталій Швець", rating: 5, text: "Приятное место, быстро и вкусно готовят" },
+      { id: 7, author: "Олеся Швец", rating: 5, text: "Мне все очень понравилось. Я ваш постоянный клиент навсегда. Тааак вкусно)" },
+      { id: 8, author: "Macmep100", rating: 5, text: "Вкусно , сытно , недорого ! Шаурма огонь 🔥 ! РЕКОМЕНДУЮ!!!" },
+      { id: 9, author: "Мурад Зир", rating: 5, text: "Хороший добрый персонал,вкусная еда и вообще очень Крутая атмосфера" },
+      { id: 10, author: "Максим Михальченко", rating: 5, text: "Вкусно делают я доволен" },
+      { id: 11, author: "Alex Marlou", rating: 5, text: "Мы приходим сюда каждый вечер за кофе – и нам это очень нравится! Кофе восхитительный, обслуживание быстрое и дружелюбное. Цены приемлемые, а небольшой перерыв от повседневной жизни идет нам обоим на пользу. Настоящая находка для тех, кто хочет насладиться расслабляющим вечером" },
+      { id: 12, author: "Валентина", rating: 5, text: "(Оценка 5/5, Еда: 5, Сервис: 5)" },
+      { id: 13, author: "Super Max Play", rating: 5, text: "Ели здесь с подругой, все понравилось. Чистенько, атмосферно, хорошая музыка. Нас обслуживала очень приятная девушка, подсказала, что можно поесть вегетарианцам. Порции просто огромны! Так что вы точно не останетесь голодными." },
+      { id: 14, author: "Владислава Варшавская", rating: 5, text: "Здравствуйте(⁠ ⁠╹⁠▽⁠╹⁠ ⁠) Сегодня покупала чай у вас. Чай прекрасный(⁠✯⁠ᴗ⁠✯⁠)" },
+      { id: 15, author: "Янина Варшавская", rating: 5, text: "Прекрасное место для быстрого и вкусного перекуса! Обслуживание на высоте, готовят с душой. Цены радуют, порции щедрые. Уже несколько раз здесь была — и всегда всё на уровне. Спасибо команде за отличную работу!🤗🧡" },
+      { id: 16, author: "Ольга Прокопенко", rating: 5, text: "Шаурма нечто! приятный сервиз, чистое помещение, все красиво" },
+      { id: 17, author: "Карина", rating: 5, text: "Очень приятно удивили! ❤️ До этого в других шаурмечных чаще попадались разочарования, поэтому сюда заходили без особых ожиданий. Но здесь действительно вкусно — свежие продукты, хорошая начинка и всё приготовлено аккуратно. Отдельно хочется похвалить персонал." },
+      { id: 18, author: "Cute Cat", rating: 5, text: "Очень классное место, уютная атмосфера, хороший плейлист и вкусная шавуха🤗 девушка которая обслуживала очень милая🥰" },
+      { id: 19, author: "Олександр Гарачук", rating: 5, text: "Шикарное обслуживание,приятная атмосфера,очень вкусная шаурма со свежими продуктами,я остался очень доволен местом!!!" },
+      { id: 20, author: "TheOBO", rating: 5, text: "Лучшее заведение за все последнее время , очень приятное обслуживание. Хороший ассортимент и приятная атмосфера, вкусная еда" },
+      { id: 21, author: "Екатерина Гатенюк", rating: 5, text: "Впечатления остались хорошие. Всё было быстро , вкусно и чисто, советую!" },
+      { id: 22, author: "Lomo133", rating: 1, text: "Одна из самых ужасных шаурм которые я ел , лаваш сырой , сыр вообще не расплавился даже чуток , внутри мясо холодное , есть не приятно ." },
+      { id: 23, author: "Nila Varshavska", rating: 5, text: "(Оценка 5/5, Еда: 5, Сервис: 5)" },
+      { id: 24, author: "Юлия Лементарева", rating: 1, text: "Брали шаурму с собой,отвратительно,лаваш сухой и разваливается,форму не держит,причем крошится кусочками,в тарелке все развалилось.Начинка неплохая,но все это больше напоминает какой то салат с лавашом.Ждали примерно минут 20,но лаваши так белыми и остались..." },
+      { id: 25, author: "Olga Slivinska", rating: 5, text: "(Оценка 5/5, Еда навынос)" },
+      { id: 26, author: "Олег Мындру", rating: 5, text: "Очень вкусная шаурма рекомендую" },
+      { id: 27, author: "Дмитрий Кузнецов", rating: 1, text: "в пустую потраченные деньги, шаурма сухая с очень жирным соусом, обычно сьедаю 600г в одно лицо, тут половинку грамм 250 сьесть не смог, не советую" },
+      { id: 28, author: "Papafich", rating: 1, text: "Мясо и соус треш, мясо сухое аж через чур" },
+      { id: 29, author: "Victoria Golovata", rating: 5, text: "Очень вкусная шаурма, персонал невероятно хороший и приятный в разговоре, очень мне понравилось, обязательно приду сюда еще, и рекомендую всем кто любит шаурму 😍🥰🥰🥰" },
+      { id: 30, author: "Головата Христина Русланівна", rating: 5, text: "Очень вкусная шаурма! Свежие овощи, сочное мясо и отличный соус. Порция большая, все приготовлено аккуратно и быстро, девушка приветливая и любезная 🤩🥹🤌. Обязательно приеду еще раз и рекомендую всем любителям вкусной уличной еды!" },
+      { id: 31, author: "Людмила Швец", rating: 5, text: "Были сегодня с сыном.все очень понравилось, особенно шаурма Фиш рыбная и гавайская. Чисто, уютно, музыка классная, девушка продавец аккуратная и приветливая. Ни одного насекомого,как в других шаурмечных . 12+ . Ребята молодцы" },
+      { id: 32, author: "Наталья Кара", rating: 5, text: "Очень вкусно, спасибо большое. Мы теперь ваши постоянные клиенты!!!" },
+      { id: 33, author: "Настя Шакина", rating: 1, text: "Зашла сегодня в первые и немного разочарована. Чек не выдали ,уже после того как я рассчиталась я сама спросила сколько ждать ,то ответ был минут 20..ладно ,хотя можно было сразу сказать ." },
+      { id: 34, author: "Олег Мартинюк", rating: 5, text: "Были с девушкой в Пересыпском районе и решили посетить Lavash Lab. Заведение приятно удивило: внутри чисто и аккуратно, есть места, где можно спокойно поесть, а также санузел. Персонал очень приветлив и вежлив." },
+      { id: 35, author: "Карина Панасюк", rating: 5, text: "Очень вкусно ,чисто и приятно находиться 😋😍" },
+      { id: 36, author: "Igor Semeniuk", rating: 1, text: "У поваров нет опыта, шаурма отвратительная. Впервые вижу чтобы помимо соленого огурца добавляли ещё и свежий в виде 10см палки. Мясо пережаренное и видно, что на вертеле стоит часами без какого либо вмешательства со стороны персонала. Единственное за что можно похвалить это чистота в помещении" },
+      { id: 37, author: "Саша Кухарев", rating: 5, text: "Очень вкусная шаурма, отличный персонал и приветливая улыбка 😍🔥" },
+      { id: 38, author: "Anna Kyhareva", rating: 5, text: "Очень уютно, вкусно, красивый и приветливый коллектив, очень советую посетить это место 😍❤️" },
+      { id: 39, author: "Слава Аксьончик", rating: 5, text: "(Оценка 5/5, без текста)" },
+      { id: 40, author: "Влада Аксенчик", rating: 5, text: "(Оценка 5/5, без текста)" },
+      { id: 41, author: "Яна Сидько", rating: 5, text: "Все очень понравилось" },
+      { id: 42, author: "Даня Сизов", rating: 5, text: "Мне все понравилось,вкусно ,чисто ,и приятное отношение персонала" },
+      { id: 43, author: "Лиля Билак", rating: 5, text: "Вкусно, приятная девочка стоит за кассой, чисто и вкусно это самое главное 🥰🤤" },
+      { id: 44, author: "Валерия Храмогина", rating: 5, text: "Вкусная еда и хороший персонал)" },
+      { id: 45, author: "виталий Демиденко", rating: 5, text: "Хорошее заведение, вкусная шаурма, понравилась, приятный персонал" },
+      { id: 46, author: "Артур Христич", rating: 1, text: "Не советую никому мясо сухое соус говно" },
+      { id: 47, author: "Олексій", rating: 1, text: "Мясо очень сухое и все внутри холодное, блондинка девушка как будто куда-то спешила , и отдала холодную,еще то и дело говорит с подругой через весь зал как будто не должно быть такого" },
+      { id: 48, author: "Alex Ejelenko", rating: 5, text: "Приятное место, можно помыть руки, присесть. Шаурмой наедаешься, вкусная, советую." }
+    ];
+
+    let currentFilter = 'all';
+
+    function getStarsHTML(rating) {
+      return '★'.repeat(rating) + '☆'.repeat(5 - rating);
+    }
+
+    function renderReviews(items) {
+      const grid = document.getElementById('reviewsGrid');
+      grid.innerHTML = '';
+
+      if (items.length === 0) {
+        grid.innerHTML = '<div class="no-reviews">Отзывов с такой оценкой пока нет.</div>';
+        return;
+      }
+
+      items.forEach(review => {
+        const card = document.createElement('div');
+        card.className = 'review-card';
+        card.innerHTML = `
+          <div>
+            <div class="review-header">
+              <span class="author-name">${review.author}</span>
+              <span class="card-stars">${getStarsHTML(review.rating)}</span>
+            </div>
+            <p class="review-body">${review.text}</p>
+          </div>
+          <div class="review-footer">
+            <span>Источник: Google Maps</span>
+            <span>Оценка: ${review.rating}/5</span>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function filterReviews(rating, btn) {
+      currentFilter = rating;
+      
+      document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      sortReviews();
+    }
+
+    function sortReviews() {
+      const sortType = document.getElementById('sortSelect').value;
+      
+      let filtered = reviewsData.filter(item => {
+        if (currentFilter === 'all') return true;
+        return item.rating === currentFilter;
+      });
+
+      let sorted = [...filtered];
+      if (sortType === 'newest') {
+        sorted.sort((a, b) => a.id - b.id);
+      } else if (sortType === 'oldest') {
+        sorted.sort((a, b) => b.id - a.id);
+      } else if (sortType === 'highest') {
+        sorted.sort((a, b) => b.rating - a.rating || a.id - b.id);
+      } else if (sortType === 'lowest') {
+        sorted.sort((a, b) => a.rating - b.rating || a.id - b.id);
+      }
+
+      renderReviews(sorted);
+    }
+
+    window.onload = () => {
+      sortReviews();
+    };
+  </script>
+</body>
+</html>
